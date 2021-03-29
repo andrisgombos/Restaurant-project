@@ -27,7 +27,7 @@ class RestaurantReview(models.Model):
     # ---- RELATED FIELDS ---- #
 
     # Set List of Users that liked Review
-    liked_by = models.ManyToManyField(to=UserProfile, related_name='liked_comments')
+    liked_by = models.ManyToManyField(to=UserProfile, related_name='liked_reviews')
     # Set UserProfile (Author of Review)
     user_profile = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE, related_name='sent_reviews')
     # Set restaurant
