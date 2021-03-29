@@ -10,10 +10,10 @@ export default function UserMenuCard(props) {
         <>
             <Card>
                 <img src={UserFace} alt="User's face"/>
-                <p><h3>UserName's Profile</h3></p>
-                <button><img src={StarIcon} alt="reviews left by user"/></button>
-                <button><img src={CommentIcom} alt="comments by user"/></button>
-                <button><img src={RestaurantIcon} alt="users favourite restaurants"/></button>
+                <div><p>UserName's Profile</p></div> 
+                <button><img src={StarIcon} alt="reviews left by user"/><p>Reviews</p></button>
+                <button><img src={CommentIcom} alt="comments by user"/><p>Comments</p></button>
+                <button><img src={RestaurantIcon} alt="users favourite restaurants"/><p>Restaurants</p></button>
             </Card>
         </>
     )
