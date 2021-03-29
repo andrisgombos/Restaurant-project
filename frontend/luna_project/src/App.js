@@ -1,9 +1,19 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import profilePage from './components/user';
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">I am alive</div>
-    )
-      
-}
+    <BrowserRouter>
+      <Switch>
+        {/* <Route exact path='/verification' component={Verification} />
+        <Route exact path='/gratulations' component={Congratulations}/> */}
+        <Route exact path='/my-profile' component={profilePage} />
 
-export default App;
+
+      </Switch>
+    </BrowserRouter>
+  );
+}
