@@ -22,7 +22,7 @@ class UserProfile(models.Model):
     # Set location
     location = models.CharField(max_length=150, blank=True)
     # Set phone
-    phone = models.CharField(max_length=10, blank=True)
+    phone = models.CharField(max_length=10, blank=True, null=True)
     # Set things I love
     things_i_love = models.CharField(max_length=500)
     # Set description
