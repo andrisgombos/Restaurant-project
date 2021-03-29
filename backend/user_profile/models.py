@@ -17,8 +17,6 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=150)
     # Set last name
     last_name = models.CharField(max_length=150)
-    # Set email
-    email = models.EmailField(max_length=200)
     # Set location
     location = models.CharField(max_length=150, blank=True)
     # Set phone
