@@ -1,95 +1,67 @@
-# First we declare the stages to describe which stages we want to build the pipeline
 stages:
-    # This will pull the image
-    - pull
-    # This will build an image
-    - build
-    - lint
-    # This will push our new image
-    - push
-    # This will clean up any dangling images or leftovers because if it stays it will take space on your server. So basically you'll run out of space for things you don't use.
-    - cleanup
-    # This will deploy after running all your stages
-    - deploy
+  - pull
+  - build
+  - lint
+  - push
+  - cleanup
+  - deploy
 
-# This will login into the Docker registry with the Gitlab built-in token. This token has a short expiration time so we better login every run.
+
 before_script:
-    - docker login -u "gitlab-ci-token" -p "$CI_BUILD_TOKEN" "$CI_REGISTRY"
+  - docker login -u "gitlab-ci-token" -p "$CI_BUILD_TOKEN" "$CI_REGISTRY"
 
-# Name the service name
+
 pull:
-    # Define which stage this is at
-    stage: pull
-    # Define shell scripts to be executed by the runner
-    script:
-        # This will pull the image on the registry
-        - docker pull "$CI_REGISTRY_IMAGE":latest
+  stage: pull
+  script:
+    - docker pull "$CI_REGISTRY_IMAGE":latest
 
-# Name the service name
+
 build:
-    # Define which stage we are at
-    stage: build
-  
-  # Define shell scripts to be executed by the runner
-    script:
-        - docker build --tag="$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" --cache-from="$CI_REGISTRY_IMAGE":latest .
+  stage: build
+  script:
+    - docker build --tag="$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" --cache-from="$CI_REGISTRY_IMAGE":latest .
 
-# Name the service name. Lint basically sets rules on how the code should look like and double checks that the code is written according to those rules.
+
 lint:
-    # Define which stage we are at
-    stage: lint
-    allow_failure: true
-    # This basically tells the pipeline to only push the code to the master branch
-    only:
-        - master
-    # Define shell scripts to be executed by the runner
-    script:
-        - export CI_PIPELINE_ID=$CI_PIPELINE_ID
-        - export CI_BUILD_REF_NAME=$CI_COMMIT_REF_NAME
-        - docker-compose -p "$CI_PIPELINE_ID" -f docker-compose.ci.yml run app flake8 .
+  stage: lint
+  allow_failure: true
+  only:
+    - master
+  script:
+    - export CI_PIPELINE_ID=$CI_PIPELINE_ID
+    - export CI_BUILD_REF_NAME=$CI_COMMIT_REF_NAME
+    - docker-compose -p "$CI_PIPELINE_ID" -f docker-compose.ci.yml run app flake8 .
 
-# Name the service name
+
 push image:
-    # Define which stage we are at
-    stage: push
-    # This basically tells the pipeline to only push the code to the master branch
-    only:
-        - master
-    # Define shell scripts to be executed by the runner
-    script:
-        # This will tag the image
-        - docker tag "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" "$CI_REGISTRY_IMAGE":"$CI_COMMIT_REF_NAME"
-        # This will push the image
-        - docker push "$CI_REGISTRY_IMAGE":"$CI_COMMIT_REF_NAME"
+  stage: push
+  only:
+    - master
+  script:
+    - docker tag "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" "$CI_REGISTRY_IMAGE":"$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE":"$CI_COMMIT_REF_NAME"
 
-# This is another push to latest. Basically this pushes the latest image.
+
 push latest:
-    # Define the stage where it's at
-    stage: push
-    # Define the shell scripts to be executed by the runner
-    script:
-        # This will tag the image with "latest" at the end
-        - docker tag "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" "$CI_REGISTRY_IMAGE":latest
-        # This will push the image
-        - docker push "$CI_REGISTRY_IMAGE":latest
+  stage: push
+  script:
+    - docker tag "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" "$CI_REGISTRY_IMAGE":latest
+    - docker push "$CI_REGISTRY_IMAGE":latest
 
-# Name the service name
+
 cleanup:
-    # Define which stage we're at
-    stage: cleanup
-    when: always
-    # Define the shell scripts to be executed by the runner
-    script:
-        # Remove images
-        - docker rmi -f "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME"
-        # Regular docker-compose command
-        - docker-compose -p "$CI_PIPELINE_ID" -f docker-compose.ci.yml down --remove-orphans
+  stage: cleanup
+  when: always
+  script:
+    - docker-compose -p "$CI_PIPELINE_ID" -f docker-compose.ci.yml down --remove-orphans
+    - docker rmi -f "$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME"
+
 
 deploy:
-    stage: deploy
-    # This basically tells the pipeline when to deploy. We're going to choose "manual" so that if we make a mistake it won't automatically get deployed on our live app. Basically here you have to go to Gitlab into the CI / CD -> Pipelines and click the button to deploy it manually.
-    when: manual
-    script:
-        - docker-compose -f docker-compose.deploy.yml pull
-        - docker-compose -f docker-compose.deploy.yml down --remove-orphans
-        - docker-compose -f docker-compose.deploy.yml up -d
+  stage: deploy
+  when: manual
+  script:
+    - docker-compose -f docker-compose.deploy.yml pull
+    - docker-compose -f docker-compose.deploy.yml down --remove-orphans
+    - docker-compose -f docker-compose.deploy.yml up -d
