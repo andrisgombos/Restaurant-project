@@ -1,33 +1,24 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-    border: black 1px solid;
-    width: 20%;
-    height:400px;
+border: 1px black solid;
+width: 15%;
+height:80%;
+display:flex;
+flex-direction: column;
+justify-items: center;
+background-color:red;
+img{
+    width: 100%;
+    height: 50%;
+    }
+p{
+    height: 10%;
+    width: 100%
+    }
+button{
+    height:45px;
     display:flex;
-    flex-direction: column;
-    
-`;
-export const ImageField = styled.div`
-    
-    border: black 1px solid;
-    img{
-        width: 100%;
-        height: 45%;
-    }    
-`;
-
-export const NameField = styled.div`
-    width: 100%;
-    heith: 10%
-    border: black 1px solid;
-`;
-
-
-
-
-export const ButtonInUserCard = styled.div`
-    width: 100%;
-    height: auto;
-    border: black 1px solid;
-`;
+    align-items:center;
+}
+`
