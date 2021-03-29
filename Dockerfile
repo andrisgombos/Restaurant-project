@@ -27,6 +27,7 @@ ENV PATH /opt/conda/envs/luna_backend/bin:$PATH
 RUN echo "source activate luna_backend" >~/.bashrc
 
 
+
 RUN mkdir -p /scripts
 COPY ./scripts /scripts
 RUN chmod +x ./scripts*
