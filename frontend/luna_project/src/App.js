@@ -1,7 +1,10 @@
+import Registration from './components/Authentication/Registration';
+
 
 function App() {
   return (
-    <div className="App">I am alive</div>
+    // <div className="App">I am alive</div>
+      <Registration/>
     )
       
 }
