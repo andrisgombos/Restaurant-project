@@ -40,4 +40,4 @@ volumes:
   postgres:
   media-files:
   static-files:
-  frontend:
+  # frontend:
