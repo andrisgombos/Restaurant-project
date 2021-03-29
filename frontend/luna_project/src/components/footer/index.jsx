@@ -25,7 +25,14 @@ display: flex;
 const LeftUpperFooterContent = styled.p`
 font-size: 16px;
 color: #4a4a4a;
-padding: 25px;
+padding: 22px;
+cursor: pointer;
+
+:hover {
+    border-bottom: 2px solid #e47d32;
+    font-weight: bold;
+    color: black;
+}
 `;
 
 const RightUpperFooter = styled.div`
