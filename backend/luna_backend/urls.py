@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from luna_backend import settings
+
 urlpatterns = [
     path('backend/admin/', admin.site.urls),
 ]
