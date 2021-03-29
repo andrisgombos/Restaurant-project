@@ -6,7 +6,7 @@ import EditIcon from '../../../assets/icon/edit.svg'
 import { ButtonInUserCard, Card, ImageField, NameField } from './style'
 
 
-export default function UserMenuCard(props) {
+export default function UserSelfMenuCard(props) {
     return (
         <>
             <Card>

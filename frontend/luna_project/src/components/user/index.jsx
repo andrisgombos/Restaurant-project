@@ -1,7 +1,9 @@
 import React from 'react'
-import Title from '../../assets/pictures/userFace.JPG'
+import Title from '../../assets/pictures/title.jpg'
 import { Background, TitleImage } from './style'
 import UserMenuCard from './UserMenuCard'
+//import UserSelfMenuCard from './UserSelfMenuCard'
+
 
 export default function ProfilePage() {
     return (
@@ -10,9 +12,8 @@ export default function ProfilePage() {
             <img src={Title} alt="unsername-titleimage"/>
         </TitleImage>
         <Background>
-            <UserMenuCard>
-
-            </UserMenuCard>
+            <UserMenuCard />
+            {/*<UserSelfMenuCard  /> */}
         </Background>
         </>
     )

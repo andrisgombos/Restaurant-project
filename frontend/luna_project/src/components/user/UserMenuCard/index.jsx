@@ -3,14 +3,14 @@ import StarIcon from '../../../assets/icon/star.svg'
 import CommentIcom from '../../../assets/icon/comment.svg'
 import RestaurantIcon from '../../../assets/icon/restaurant.svg'
 import { ButtonInUserCard, Card, ImageField, NameField } from './style'
-
+import UserFace from '../../../assets/pictures/userFace.JPG'
 
 export default function UserMenuCard(props) {
     return (
         <>
             <Card>
                 <ImageField>
-                <img src={undefined} alt="User's face"/>
+                    <img src={UserFace} alt="User's face"/>
                 </ImageField>
                 <NameField>
                 <h3>UserName's Profile</h3>

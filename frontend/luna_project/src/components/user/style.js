@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const TitleImage = styled.div`
-     height: 200px;
+    height: 30%;
     width:100%;
     align-items: center;
     img{
