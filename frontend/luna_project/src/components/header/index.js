@@ -1,24 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
 import lunaLogo from '../../assets/icon/logo.svg'
+import Footer from '../footer'
 
 const HeaderContainer = styled.div`
-width: 100vw;
-background-color: red;
+display: flex;
+width: 100%;
+justify-content: space-between;
 `;
 
 const Logo = styled.img`
-width: 100px;
+width: 150px;
+padding: 20px;
+`;
+
+const RightContainer = styled.div`
+display: flex;
+align-items: center;
+margin-right: 20px;
+`;
+
+const NavLink = styled.p`
+font-family: Arial, Helvetica, sans-serif;
+color: #4a4a4a;
+margin: 0 20px;
+padding: 15px 0;
+cursor: pointer;
+
+
+:hover {
+    border-bottom: 2px solid #e47d32;
+    font-weight: bold;
+    color: black;
+}
+`;
+
+const ButtonPlaceholder = styled.button`
+background-color: #e47d32;
+height: 20px;
+//margin-left: 10px;
+border:none;
 `;
 
 
 const Header = () => {
 
     return (
+        <>
         <HeaderContainer>
             <Logo src={lunaLogo}></Logo>
+            <RightContainer>
+                <NavLink>Home</NavLink>
+                <NavLink>Search</NavLink>
+                <NavLink>Profile</NavLink>
+                <ButtonPlaceholder>SignUp</ButtonPlaceholder>
+            </RightContainer>
         </HeaderContainer>
+        <Footer></Footer>
+        </>
     );
 }
 
-export default Header
+export default Header;
