@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import Title from '../../assets/pictures/userFace.JPG'
 
 export default function ProfilePage() {
@@ -15,3 +15,4 @@ export default function ProfilePage() {
         </>
     )
 }
+*/
