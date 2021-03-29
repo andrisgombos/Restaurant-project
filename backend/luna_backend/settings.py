@@ -40,6 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Own Apps
+    'comment',
+    'registration',
+    'restaurant',
+    'restaurant_review',
+    'user',
+    'user_profile',
+
+    # Third Party Apps
 ]
 
 MIDDLEWARE = [
@@ -129,3 +139,4 @@ STATIC_ROOT = '/static-files/'
 MEDIA_URL = '/media-files/'
 MEDIA_ROOT = '/media-files/'
 
+AUTH_USER_MODEL = 'user.User'
