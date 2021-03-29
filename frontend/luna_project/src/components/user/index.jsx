@@ -1,4 +1,5 @@
 import React from 'react'
+import Title from '../../assets/pictures/userFace.JPG'
 
 export default function profilePage() {
     return (
@@ -8,7 +9,7 @@ export default function profilePage() {
         </TitleImage>
         <Background>
             <UserMenuCard>
-                
+
             </UserMenuCard>
         </Background>
         </>
