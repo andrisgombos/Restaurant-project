@@ -1,5 +1,7 @@
 from django.db import models
 
+from user_profile.models import UserProfile
+
 PRICE_LEVEL_CHOICE = [
     ('1', '1'),
     ('2', '2'),
@@ -36,6 +38,11 @@ class Restaurant(models.Model):
     price_level = models.CharField(max_length=1, choices=PRICE_LEVEL_CHOICE)
     # Set image
     image = models.ImageField(upload_to=user_directory_path)
+
+    # ---- RELATED FIELDS ---- #
+
+    # Set restaurant owner
+    restaurant_owner = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE, related_name='restaurants')
 
     def __str__(self):
         return f'{self.id} | {self.name}'

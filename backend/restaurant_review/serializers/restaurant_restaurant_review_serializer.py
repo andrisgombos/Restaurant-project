@@ -4,10 +4,9 @@ from restaurant.serializers.restaurant_restaurant_review_serializer import Resta
 from restaurant_review.models import RestaurantReview
 
 
-class CommentRestaurantReviewSerializer(serializers.ModelSerializer):
-    restaurant = RestaurantRestaurantReviewSerializer(read_only=True)
+class RestaurantRestaurantReviewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RestaurantReview
-        fields = ['id', 'text_content', 'rating', 'restaurant']
-        read_only_fields = ['restaurant']
+        fields = ['id', 'text_content', 'rating']
+        read_only_fields = []

@@ -34,4 +34,4 @@ class RestaurantReview(models.Model):
     restaurant = models.ForeignKey(to=Restaurant, on_delete=models.CASCADE, related_name='reviews')
 
     def __str__(self):
-        return f'{self.id} | by: {user_profile.user.username} | for: {self.restaurant}'
+        return f'{self.id} | by: {self.user_profile.user.username} | for: {self.restaurant}'

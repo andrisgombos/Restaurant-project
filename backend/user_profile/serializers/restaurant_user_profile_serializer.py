@@ -3,7 +3,7 @@ from user.serializers.comment_user_serializer import CommentUserSerializer
 from user_profile.models import UserProfile
 
 
-class CommentUserProfileSerializer(serializers.ModelSerializer):
+class RestaurantUserProfileSerializer(serializers.ModelSerializer):
     user = CommentUserSerializer(read_only=True)
 
     class Meta:
