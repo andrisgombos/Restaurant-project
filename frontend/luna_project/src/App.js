@@ -4,9 +4,9 @@ import Header from "./components/header";
 import ProfilePage from "./components/user";
 
 
-
 const App = () => {
   return <>
+    
     <Router>
       <Switch>
         <Route exact path='/registration' component={Registration}/>
