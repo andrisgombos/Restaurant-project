@@ -28,7 +28,7 @@ SECRET_KEY = '1bmd_9r$z@lzp48e-4z)1=nq@6z@z6#$u=u#y(sm4vlwk(5vut'
 DEBUG = ast.literal_eval(os.environ.get('DJANGO_DEBUG'))
 
 # Don't forget to update it to the droplet IP / URL
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'taurus.propulsion-learn.ch', 'taurus-luna.propulsion-learn.ch']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'luna-taurus.propulsion-learn.ch']
 
 
 # Application definition
