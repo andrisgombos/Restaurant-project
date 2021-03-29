@@ -4,7 +4,7 @@ export const Card = styled.div`
     width: 100px;
     height:400px;
     display:flex;
-    flexdirection: column;
+    flex-direction:column;
     
 `;
 export const ImageField = styled.div`
@@ -12,17 +12,4 @@ export const ImageField = styled.div`
     height: 45%;
 
     
-`;
-
-export const NameField = styled.div`
-    width: 100%;
-    heith: 10%
-`
-
-
-
-
-export const ButtonInUserCard = styled.div`
-    width: 100%;
-    height: auto;
 `;
