@@ -9,6 +9,7 @@ const FooterContainer = styled.footer`
 width: 100%;
 position: fixed;
 bottom: 0;
+background-color: white;
 `;
 
 const UpperFooter = styled.footer`
@@ -53,6 +54,7 @@ const LowerFooter = styled.footer`
 height: 25px;
 width: 100%;
 border-top: 1px lightgrey solid;
+background-color: white;
 `;
 
 const Copyright = styled.p`
