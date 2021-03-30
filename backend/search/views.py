@@ -10,6 +10,17 @@ from restaurant.serializers.main_restaurant_serializer import MainRestaurantSeri
 
 
 class UsersSearchView(ListAPIView):
+    '''
+        # Search Users by any field
+
+        This end point let's you search users by any field. You can try searching for:
+
+        **first_name**
+        **last_name**
+        **location**
+        **things_i_love**
+        **description**
+        '''
     queryset = UserProfile.objects.all()
     serializer_class = MainUserProfileSerializer
     search_fields = ['first_name', 'last_name', 'location', 'things_i_love', 'description']
@@ -20,6 +31,17 @@ class UsersSearchView(ListAPIView):
 
 
 class RestaurantsSearchView(ListAPIView):
+    '''
+            # Search Restaurants by any field
+
+            This end point let's you search users by any field. You can try searching for:
+
+            **name**
+            **country**
+            **street**
+            **city**
+            **zip**
+            '''
     queryset = Restaurant.objects.all()
     serializer_class = MainRestaurantSerializer
     permission_classes = []
@@ -28,6 +50,13 @@ class RestaurantsSearchView(ListAPIView):
 
 
 class ReviewsSearchView(ListAPIView):
+    '''
+                # Search Reviews by text_content
+
+                This end point let's you search users by any field. You can try searching for:
+
+                **text_content**
+                '''
     queryset = RestaurantReview.objects.all()
     serializer_class = MainRestaurantReviewSerializer
     search_fields = ['text_content']

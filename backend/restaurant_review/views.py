@@ -10,6 +10,13 @@ from restaurant_review.serializers.main_restaurant_review_serializer import Main
 
 
 class CreateRestaurantReviewView(CreateAPIView):
+    '''
+                # Create a new review on a specified restaurant
+
+                This end point let's you create a new review on any restaurant (specified by ID in the URL).
+
+                The currently logged in user is automatically assigned as the author of the review.
+                '''
     queryset = Restaurant.objects.all()
     serializer_class = MainRestaurantReviewSerializer
 
@@ -22,6 +29,11 @@ class CreateRestaurantReviewView(CreateAPIView):
 
 
 class GetRestaurantReviewsOfRestaurantView(ListAPIView):
+    '''
+        # Get all reviews of a restaurant
+
+        This end point let's you retrieve all reviews of a restaurant (specified by ID in the URL)
+    '''
     serializer_class = MainRestaurantReviewSerializer
 
     def list(self, request, *args, **kwargs):
@@ -32,6 +44,11 @@ class GetRestaurantReviewsOfRestaurantView(ListAPIView):
 
 
 class GetRestaurantReviewsOfUserProfileView(ListAPIView):
+    '''
+        # Get all reviews created by a given user profile
+
+        This end point let's you retrieve all reviews created by a user profile (specified by ID in the URL)
+    '''
     serializer_class = MainRestaurantReviewSerializer
 
     def list(self, request, *args, **kwargs):
@@ -42,11 +59,24 @@ class GetRestaurantReviewsOfUserProfileView(ListAPIView):
 
 
 class RetrieveUpdateDeleteRestaurantReviewView(RetrieveUpdateDestroyAPIView):
+    '''
+            # Retrieve, Update or Delete a single Review (specified by ID in the URL)
+
+            With the **GET Method** you can retrieve any review (specified by ID in the URL)
+            With the **PUT Method** you can update (all fields required) any review (specified by ID in the URL)
+            With the **PATCH Method** you can update (any field) any review (specified by ID in the URL)
+            With the **DELETE Method** you can delete any review (specified by ID in the URL)
+        '''
     queryset = RestaurantReview.objects.all()
     serializer_class = MainRestaurantReviewSerializer
 
 
 class ToggleLikeRestaurantReviewView(UpdateAPIView):
+    '''
+            # Like or Unlike a review. PATCH is preferred.
+
+            This end point let's you either like or unlike a review.
+        '''
     serializer_class = MainRestaurantReviewSerializer
 
     def update(self, request, *args, **kwargs):
@@ -67,6 +97,11 @@ class ToggleLikeRestaurantReviewView(UpdateAPIView):
 
 
 class ShowLikedRestaurantReviewsView(ListAPIView):
+    '''
+                # Show all reviews that the currently logged in user liked
+
+                This end point let's you get a list of all reviews that the currently logged in user profile has liked.
+            '''
     serializer_class = MainRestaurantReviewSerializer
 
     def list(self, request, *args, **kwargs):
@@ -77,6 +112,11 @@ class ShowLikedRestaurantReviewsView(ListAPIView):
 
 
 class ShowCommentedRestaurantReviewsView(ListAPIView):
+    '''
+                # Show all reviews that the currently logged in user commented on
+
+                This end point let's you get a list of all the reviews that the currently logged in user comented on.
+            '''
     serializer_class = MainRestaurantReviewSerializer
 
     def list(self, request, *args, **kwargs):
