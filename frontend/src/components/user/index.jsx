@@ -4,9 +4,7 @@ import { Mainsection } from '../../globalStyle/globalStyle'
 import Footer from '../footer'
 import Header from '../header'
 import { Background, TitleImage } from './style'
-//import UserMenuCard from './UserMenuCard'
-import UserSelfMenuCard from './UserSelfMenuCard'
-//import UserSelfMenuCard from './UserSelfMenuCard'
+import UserMenuCard from './UserMenuCard'
 
 
 export default function ProfilePage() {
