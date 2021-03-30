@@ -1,11 +1,8 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import filters
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, GenericAPIView, \
-    RetrieveAPIView
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.response import Response
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from user_profile.models import UserProfile
 from user_profile.serializers.main_user_profile_serializer import MainUserProfileSerializer
