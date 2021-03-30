@@ -23,27 +23,38 @@ export  const Mainsection = styled.div`
 export const Card = styled.div`
 position: sticky;
 margin-top: -100px;
-width: 15%;
+width: 18%;
 height:auto;
 display:flex;
 flex-direction: column;
 justify-items: center;
 img{
     width: 100%;
-    height: 150px;
+    height: 220px;
     }
 div{
-    height: 55px;
-    width: 100%;
+    height:55px;
     display:flex;
     justify-content:center;
-    align-items:center;    
+    align-items:center;
+    border-bottom:black 2px solid
 }
 
 button{
     height:45px;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:black 2px solid;
     display:flex;
     align-items:center;
+    background-color:white;    
+    cursor: pointer;
+    :focus{
+        background-color: transparent;
+        border-left:orange 5px solid;
+        outline:none;    
+    }
     img{
         height: 25px;
         width:25px;
@@ -54,6 +65,9 @@ button{
         margin-left: 5px;
         height:auto;
         width:auto;
+    }
+    :active{
+        
     }
 
 }

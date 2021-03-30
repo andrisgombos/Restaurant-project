@@ -4,8 +4,7 @@ import { Background } from '../../globalStyle/globalStyle'
 import Footer from '../footer'
 import Header from '../header'
 import  { TitleImage , Mainsection } from './style'
-//import UserMenuCard from './UserMenuCard'
-import UserSelfMenuCard from './UserSelfMenuCard'
+import UserMenuCard from './UserMenuCard'
 import CenterContainer from './userCenter';
 import { AboutUserContainer } from './aboutUser/style'
 
@@ -20,8 +19,7 @@ export default function ProfilePage() {
         <Background>
             <Mainsection>
                 {/* if the Token is stored then render  the self-menu-card, if no token is present re-direct to signUp page*/}
-                {/*UserMenuCard */}
-                <UserSelfMenuCard  />
+                <UserMenuCard />
                 <CenterContainer />
                 <AboutUserContainer />
             </Mainsection>
