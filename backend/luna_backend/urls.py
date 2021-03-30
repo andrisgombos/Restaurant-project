@@ -41,13 +41,10 @@ api_patterns = [
     path('userprofiles/', include('user_profile.urls')),
     path('categories/', include('category.urls')),
     path('comments/', include('comment.urls')),
-<<<<<<< Updated upstream
     path('reviews/', include('restaurant_review.urls')),
     path('restaurants/', include('restaurant.urls')),
-=======
     path('search/', include('search.urls')),
     path('home/', include('search.urls')),
->>>>>>> Stashed changes
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
