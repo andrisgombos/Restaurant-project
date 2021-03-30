@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Email from "./components/Authentication/Email";
+//import Email from "./components/Authentication/Email";
 import { Register } from "./components/Authentication/Registration";
-import Verification from "./components/Authentication/Verification";
+//import Verification from "./components/Authentication/Verification";
 import SignIn from "./components/Authentication/Signin"
 import Home from "./components/home";
 import ProfilePage from './components/userPage';

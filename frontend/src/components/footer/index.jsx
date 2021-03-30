@@ -7,7 +7,7 @@ import instagram from '../../assets/icon/instagram.svg'
 
 const FooterContainer = styled.footer`
 width: 100%;
-position: fixed;
+position: bottom;
 bottom: 0;
 background-color: white;
 `;
