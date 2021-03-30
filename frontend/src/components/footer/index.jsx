@@ -12,7 +12,7 @@ bottom: 0;
 `;
 
 const UpperFooter = styled.footer`
-height: 60px;
+height: 45px;
 justify-content: space-between;
 align-items: center;
 display: flex;
@@ -23,9 +23,10 @@ display: flex;
 `;
 
 const LeftUpperFooterContent = styled.p`
-font-size: 16px;
+font-size: 13px;
 color: #4a4a4a;
-padding: 22px;
+margin: 0 22px;
+padding: 15px 0;
 cursor: pointer;
 
 :hover {
@@ -45,18 +46,19 @@ padding: 10px;
 height: 50px;
 width: 50px;
 color: #4a4a4a;
+cursor: pointer;
 `;
 
 const LowerFooter = styled.footer`
-height: 30px;
+height: 25px;
 width: 100%;
 border-top: 1px lightgrey solid;
 `;
 
 const Copyright = styled.p`
 color: #4a4a4a;
-padding: 5px 25px;
-font-size: 12px;
+padding: 5px 20px;
+font-size: 10px;
 `;
 
 const Footer = () => {
