@@ -4,6 +4,10 @@ import FilledStarImage from '../../assets/icon/star_filled.svg';
 import EmptyStarImage from '../../assets/icon/star.svg';
 import HalfFilledStarImage from '../../assets/icon/star_half_filled.svg';
 
+const StarContainer = styled.div`
+padding: 10px;
+`;
+
 const Star = styled.img`
 width: 25px;
 `;
@@ -23,9 +27,9 @@ const StarRating = (props) => {
   }
 
   return (
-    <div>
+    <StarContainer>
       {stars}
-    </div>
+    </StarContainer>
   )
 };
 

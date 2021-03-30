@@ -63,9 +63,9 @@ color: #4c4c4c;
 
 const RestaurantGridContainer = styled.div`
 display: grid;
-grid-template-columns: 270px 270px 270px 270px;
+grid-template-columns: 20% 20% 20% 20%;
 grid-template-rows: auto;
-column-gap: 20px;
+column-gap: 65px;
 row-gap: 30px;
 margin-top: 1.5rem;
 `;
@@ -112,7 +112,7 @@ const Home = () => {
                     <RestaurantCard>
                         <RestaurantName>Example Rest</RestaurantName>
                         <RestaurantAddress>Bahnhofstrasse 43</RestaurantAddress>
-                        <StarRating rating={3.6}/>
+                        <StarRating rating={2.8}/>
                         <RestaurantImage src={Restaurant}></RestaurantImage>
                     </RestaurantCard>
                     <RestaurantCard>hello</RestaurantCard>
