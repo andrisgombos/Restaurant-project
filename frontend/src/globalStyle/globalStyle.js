@@ -24,5 +24,26 @@ export const Background = styled.div`
     justify-content:center;
     background-color:#f8f8f8;
     height:100vh;
-    width:100%
+    width:100%;
+`;
+
+export const InputWithLabel = styled.input`
+    width:300px;
+    height:40px;
+    margin-top:5px;
+
+`;
+export const InputBox = styled.div`
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+
+
+`;
+
+export const TextFieldWithLabel = styled.textarea`
+    width:500px;
+    margin-bottom:10px;
+    margin-top:5px;
 `;

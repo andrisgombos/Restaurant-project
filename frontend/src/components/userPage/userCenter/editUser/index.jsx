@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { InputBox, InputWithLabel, TextFieldWithLabel } from '../../../../globalStyle/globalStyle'
+import { Main } from './style'
 
 // this is just a test
 
@@ -51,85 +53,98 @@ export default function EditProfile() {
                 console.log(data);
             });
 
-    };
-
-
-
-    return (
-        <>
-            <SetPicture> 
+        };
+        
+        
+        
+        return (
+            <>
+            {/* <SetPicture> */}
                 {/* something with a modal to upload the new picture */}
-            </SetPicture>
-            
+            {/* </SetPicture>  */}
             <Main>
+                <h2>EDIT USERPROFILE</h2>
                <form>
                    <section>
-                        <Personal>
-                            <InputContainer><MotionInput 
-                                style={{margin:"10px"}}
+                            <InputBox>
+                            <label for="username">Username</label>
+                            <InputWithLabel
+                                    required    
+                                    id="username"
+                                    value= {undefined }
+                                    type="text"
+                                    placeholder="Username"
+                                    onChange={(e)=>setUsername(e.target.value)}/>
+                            </InputBox>
+                            <InputBox> 
+                            <label for="firstname">First Name</label>
+                            <InputWithLabel                                
+                                    id="firstname"
                                     value= {undefined }
                                     type="text"
                                     placeholder="First Name"
-                                    onChange={(e)=>setFirst_name(e.target.value)}               
-                                    />          
-                            </InputContainer>
-                            <InputContainer><MotionInput 
-                                style={{margin:"10px"}}
+                                    onChange={(e)=>setFirst_name(e.target.value)}/>
+                            </InputBox>
+                            <InputBox>
+                            <label for="lastname">Last Name</label>
+                            <InputWithLabel 
+                                  
+                                        id="lastname"
+                                        value= {undefined }
+                                        type="text"
+                                        placeholder="Last Name"
+                                        onChange={(e)=>setLast_name(e.target.value)}/>
+                            </InputBox>
+                            <InputBox>
+                            <label for="email">E-Mail</label>
+                            <InputWithLabel                                
+                                    id="email"
                                     value= {undefined }
                                     type="text"
                                     placeholder="Email"
-                                    onChange={(e)=>setEmail(e.target.value)}               
-                                    />          
-                            </InputContainer>
-                            
-                            <InputContainer><MotionInput 
-                                style={{margin:"10px"}}
-                                    value= {undefined }
-                                    type="text"
-                                    placeholder="About"
-                                    onChange={(e)=>setdescription(e.target.value)}               
-                                    />          
-                            </InputContainer>
-                        </Personal>
-                        <Personal>
-                    <InputContainer><MotionInput 
-                        style={{margin:"10px"}}
-                            value= {undefined }
-                            type="text"
-                            placeholder="Last Name"
-                            onChange={(e)=>setLast_name(e.target.value)}               
-                            />          
-                    </InputContainer>
-                    <InputContainer><MotionInput 
-                        style={{margin:"10px"}}
-                            value= {undefined }
-                            type="text"
-                            placeholder="Username"
-                            onChange={(e)=>setUsername(e.target.value)}               
-                            />          
-                    </InputContainer>
-                    <InputContainer><MotionInput 
-                                style={{margin:"10px"}}
+                                    onChange={(e)=>setEmail(e.target.value)}/>
+                            </InputBox>
+                            <InputBox>
+                            <label for="location">Location</label>
+                            <InputWithLabel                                
+                                    id="location"
                                     value= {undefined }
                                     type="text"
                                     placeholder="Location"
-                                    onChange={(e)=>setLocation(e.target.value)}               
-                                    />          
-                            </InputContainer>
-                   </Personal>
-                   </section>
-                   <Intrests>
-                   <h3>things I like</h3>
-                   <InputContainer><MotionInput 
-                    style={{margin:"10px"}}
-                        value= {undefined }
-                        type="text"
-                        placeholder="Food, Sports, Music, etc."
-                        onChange={(e)=>setThings_user_loves(e.target.value)}               
-                        />          
-                   </InputContainer>
-
-                   </Intrests>
+                                    onChange={(e)=>setLocation(e.target.value)}/>
+                            </InputBox>
+                            <InputBox>  
+                            <label for="phone">Phone</label>       
+                            <InputWithLabel                                
+                                    id="phone"
+                                    value= {undefined }
+                                    type="text"
+                                    placeholder="Phone"
+                                    onChange={(e)=>setPhone(e.target.value)}/>      
+                            </InputBox>
+                            <InputBox>
+                            <label for="Til">Things I love</label>
+                            <TextFieldWithLabel
+                                    rows="4" cols="50"
+                                    id="Til"
+                                    value= {undefined }
+                                    type="text"
+                                    placeholder="Peace, Love and Puppies"
+                                    onChange={(e)=>setThings_user_loves(e.target.value)}/>
+                            </InputBox>
+                            <InputBox>
+                            <label for="about">About</label>
+                            <TextFieldWithLabel
+                                    rows="4" cols="50"                                
+                                    id="about"
+                                    value= {undefined }
+                                    type="textfield"
+                                    placeholder="About"
+                                    onChange={(e)=>setdescription(e.target.value)}/>
+                            </InputBox>
+                                    
+                            </section>
+                   <button type="submit" onClick={editProfileHandler}>SAVE</button>
                    </form>
             </Main>
             
