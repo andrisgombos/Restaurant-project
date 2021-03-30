@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 // eslint-disable-next-line
 const RegisterCont = styled.div`
-    background-color: #F8F8FF;
+    background-color: #F2F2F2;
     display: flex;
     flex-direction: column;
     // justify-content: center;
