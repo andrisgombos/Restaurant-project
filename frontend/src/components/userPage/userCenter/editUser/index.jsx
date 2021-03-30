@@ -142,11 +142,11 @@ export default function EditProfile() {
                                     placeholder="About"
                                     onChange={(e)=>setdescription(e.target.value)}/>
                             </InputBox>
-                                    
                             </section>
                    <button type="submit" onClick={editProfileHandler}>SAVE</button>
                    </form>
             </Main>
+                                    
             
         </>
     )
