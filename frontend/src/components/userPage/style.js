@@ -21,6 +21,8 @@ export  const Mainsection = styled.div`
 `;
 
 export const Card = styled.div`
+position: sticky;
+margin-top: -100px;
 width: 15%;
 height:auto;
 display:flex;
