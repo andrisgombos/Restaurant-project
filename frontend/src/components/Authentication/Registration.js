@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import Footer from "../footer";
+import Header from "../header";
+
 // eslint-disable-next-line
 const RegisterCont = styled.div`
     background-color: #F2F2F2;
@@ -10,7 +13,8 @@ const RegisterCont = styled.div`
     width: 100vw;
     font-weight: bold;
 `
-const RegisterMsg = styled.h1`
+export const RegisterMsg = styled.h1`
+    color: #4C4C4C;
     font-size: 2.5rem;
     margin-bottom: 80px;
     text-transform: uppercase;
@@ -21,7 +25,7 @@ const RegisterMsg = styled.h1`
     font-weight: bold;
 `
 
-const Inputfield = styled.input`
+export const Inputfield = styled.input`
     padding: 0.7em 1em;
     width: 20em;
     margin-top: 2em;
@@ -41,17 +45,18 @@ const RegButton = styled.button`
     margin-top: 3em;
 `
 
-const Register = () => {
+export const Register = () => {
 
 
 
     return  <>
-        <RegisterCont>
-            <RegisterMsg>Registration</RegisterMsg>
-            <Inputfield name='email' type='text' placeholder='E-mail address'></Inputfield>
-            <RegButton type='submit'>Register</RegButton>
-        </RegisterCont>
-    </>
+                <Header/>
+                <RegisterCont>
+                    <RegisterMsg>Registration</RegisterMsg>
+                    <Inputfield name='email' type='text' placeholder='E-mail address'></Inputfield>
+                    <RegButton type='submit'>Register</RegButton>
+                </RegisterCont>
+                <Footer/>
+            </>
 }
 
-export default (Register)
