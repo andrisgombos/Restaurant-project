@@ -18,3 +18,11 @@ export const Mainsection = styled.div`
     margin-right: auto;
     background-color:transparent;
 `;
+
+export const Background = styled.div`
+    display:flex;
+    justify-content:center;
+    background-color:#f8f8f8;
+    height:100vh;
+    width:100%
+`;
