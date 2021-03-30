@@ -1,13 +1,14 @@
 import React from 'react'
+import { AboutUseerContainer } from './style'
 
 export default function AboutUser() {
     return (
         <>
-        <AboutUseerContainer>
+        <AboutUserContainer>
             {/*there will be individual elements in here containing the result of the fetch */}
 
 
-        </AboutUseerContainer>
+        </AboutUserContainer>
             
         </>
     )

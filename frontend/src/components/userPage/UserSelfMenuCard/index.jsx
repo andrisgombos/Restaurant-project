@@ -3,7 +3,7 @@ import StarIcon from '../../../assets/icon/star.svg'
 import CommentIcom from '../../../assets/icon/comment.svg'
 import RestaurantIcon from '../../../assets/icon/restaurant.svg'
 import EditIcon from '../../../assets/icon/edit.svg'
-import { Card } from '../UserMenuCard/style'
+import { Card } from '../style'
 import UserFace from '../../../assets/pictures/userFace2.JPG'
 
 export default function UserSelfMenuCard(props) {

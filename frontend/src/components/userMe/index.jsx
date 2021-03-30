@@ -1,16 +1,15 @@
 import React from 'react'
 import Title from '../../assets/pictures/title.jpg'
-import { Background } from '../../globalStyle/globalStyle'
+import { Mainsection } from '../../globalStyle/globalStyle'
 import Footer from '../footer'
 import Header from '../header'
-import  { TitleImage , Mainsection } from './style'
+import { Background, TitleImage } from './style'
 //import UserMenuCard from './UserMenuCard'
 import UserSelfMenuCard from './UserSelfMenuCard'
-import CenterContainer from './userCenter';
-import { AboutUserContainer } from './aboutUser/style'
+//import UserSelfMenuCard from './UserSelfMenuCard'
 
 
-export default function ProfilePage() {
+export default function MyProfilePage() {
     return (
         <>
         <Header />
@@ -19,11 +18,7 @@ export default function ProfilePage() {
         </TitleImage>
         <Background>
             <Mainsection>
-                {/* if the Token is stored then render  the self-menu-card, if no token is present re-direct to signUp page*/}
-                {/*UserMenuCard */}
-                <UserSelfMenuCard  />
-                <CenterContainer />
-                <AboutUserContainer />
+                <UserSelfMenuCard  /> 
             </Mainsection>
         </Background>
         <Footer />
