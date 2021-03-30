@@ -9,7 +9,7 @@ import UserSelfMenuCard from './UserSelfMenuCard'
 //import UserSelfMenuCard from './UserSelfMenuCard'
 
 
-export default function ProfilePage() {
+export default function MyProfilePage() {
     return (
         <>
         <Header />
@@ -18,7 +18,7 @@ export default function ProfilePage() {
         </TitleImage>
         <Background>
             <Mainsection>
-                <UserMenuCard />
+                <UserSelfMenuCard  /> 
             </Mainsection>
         </Background>
         <Footer />
