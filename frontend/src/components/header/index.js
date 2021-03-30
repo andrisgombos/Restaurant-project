@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import lunaLogo from '../../assets/icon/logo.svg'
-import Footer from '../footer'
 
 const HeaderContainer = styled.div`
 display: flex;
@@ -24,7 +23,7 @@ const NavLink = styled.p`
 font-family: Arial, Helvetica, sans-serif;
 color: #4a4a4a;
 margin: 0 20px;
-padding: 15px 0;
+padding: 23px 0;
 cursor: pointer;
 
 
@@ -56,7 +55,6 @@ const Header = () => {
                 <ButtonPlaceholder>SignUp</ButtonPlaceholder>
             </RightContainer>
         </HeaderContainer>
-        <Footer></Footer>
         </>
     );
 }
