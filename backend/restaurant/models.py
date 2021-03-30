@@ -1,5 +1,6 @@
 from django.db import models
 
+from category.models import Category
 from user_profile.models import UserProfile
 
 PRICE_LEVEL_CHOICE = [
@@ -16,8 +17,6 @@ def user_directory_path(instance, filename):
 class Restaurant(models.Model):
     # Set name
     name = models.CharField(max_length=250)
-    # Set category
-    category = models.CharField(max_length=100)
     # Set country
     country = models.CharField(max_length=100)
     # Set street
@@ -43,6 +42,8 @@ class Restaurant(models.Model):
 
     # Set restaurant owner
     restaurant_owner = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE, related_name='restaurants')
+    # Set categories
+    categories = models.ManyToManyField(to=Category, related_name='restaurants')
 
     def __str__(self):
         return f'{self.id} | {self.name}'

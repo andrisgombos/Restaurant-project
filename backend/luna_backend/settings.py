@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Own Apps
+    'category',
     'comment',
     'registration',
     'restaurant',
