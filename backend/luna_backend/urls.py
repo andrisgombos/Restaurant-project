@@ -31,8 +31,8 @@ schema_view = get_schema_view(
       contact=openapi.Contact(email="learn@propulsionacademy.com"),
       license=openapi.License(name="BSD License"),
    ),
-   public=True, # Set to False restrict access to protected endpoints
-   permission_classes=(permissions.AllowAny,), # Permissions for docs access
+   public=True,  # Set to False restrict access to protected endpoints
+   permission_classes=(permissions.AllowAny,),  # Permissions for docs access
 )
 
 api_patterns = [

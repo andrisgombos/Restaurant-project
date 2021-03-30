@@ -9,9 +9,12 @@ PRICE_LEVEL_CHOICE = [
     ('3', '3')
 ]
 
+
 def user_directory_path(instance, filename):
-# Here we define the path/sub-folder where this file should be stored. In this case it will be /media-files/1/avatar.jpg for example.
+    # Here we define the path/sub-folder where this file should be stored.
+    # In this case it will be /media-files/1/avatar.jpg for example.
     return f'{instance.id}/{filename}'
+
 
 # Create your models here.
 class Restaurant(models.Model):

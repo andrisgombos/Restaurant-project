@@ -18,5 +18,7 @@ class MainUserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ['id', 'user', 'first_name', 'last_name', 'location', 'phone', 'things_i_love', 'description', 'joined_date', 'profile_picture', 'restaurants', 'comments', 'liked_comments', 'sent_reviews', 'liked_reviews']
+        fields = ['id', 'user', 'first_name', 'last_name', 'location', 'phone', 'things_i_love', 'description',
+                  'joined_date', 'profile_picture', 'restaurants', 'comments', 'liked_comments', 'sent_reviews',
+                  'liked_reviews']
         read_only_fields = ['comments', 'liked_comments', 'sent_reviews', 'liked_reviews', 'user', 'restaurants']

@@ -11,6 +11,7 @@ RATING_CHOICES = [
     ('5', '5')
 ]
 
+
 # Create your models here.
 class RestaurantReview(models.Model):
     # ---- NON RELATED FIELDS ---- #

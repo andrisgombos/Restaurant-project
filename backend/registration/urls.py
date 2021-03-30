@@ -3,8 +3,6 @@ from rest_framework_simplejwt import views as jwt_views
 
 from registration.views import RegistrationView, ValidationView, ResetPasswordView, ResetPasswordValidationView
 
-
-
 app_name = 'registration'
 
 urlpatterns = [
