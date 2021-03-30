@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Footer from "../footer";
 import Header from "../header";
-import { RegisterMsg } from "./Registration"
+import { Button, RegisterMsg } from "./Registration"
 import { Inputfield } from "./Registration"
 
 const VerificationCont = styled.div`
@@ -25,6 +25,10 @@ const InputHolder = styled.div`
     }
 `
 
+const RegButton = styled(Button)`
+    width: 25rem;
+`
+
 const Verification = () => {
     return  <>
                 <Header/>
@@ -42,6 +46,7 @@ const Verification = () => {
                                 <Inputfield name='password' type='password' placeholder='Password repeat'></Inputfield>
                             </div>
                         </InputHolder>
+                        <RegButton type='submit'>Finish registration</RegButton>
                     </VerificationCont>
                 <Footer/>
             </>

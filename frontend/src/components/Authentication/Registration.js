@@ -33,14 +33,14 @@ export const Inputfield = styled.input`
     font-weight: bold;
     border: 1.5px solid #e5e5e5;
 `
-const RegButton = styled.button`
+export const Button = styled.button`
     width: 10em;
     align-self: center;
     border-radius: 100px;
     color: #F8F8FF;
     border: none;
     background-color: orange;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 1em 1.5em;
     margin-top: 3em;
 `
@@ -54,7 +54,7 @@ export const Register = () => {
                 <RegisterCont>
                     <RegisterMsg>Registration</RegisterMsg>
                     <Inputfield name='email' type='text' placeholder='E-mail address'></Inputfield>
-                    <RegButton type='submit'>Register</RegButton>
+                    <Button type='submit'>Register</Button>
                 </RegisterCont>
                 <Footer/>
             </>
