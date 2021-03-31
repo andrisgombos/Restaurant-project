@@ -1,20 +1,9 @@
-import styled from 'styled-components'
-import Footer from "../footer";
-import Header from "../header";
-import { RegisterMsg } from "./Registration"
-import { Inputfield } from "./Registration"
-import { Button } from "./Registration"
+import Footer from "../../footer";
+import Header from "../../header";
+import { RegisterMsg, Inputfield, Button } from "../registration/style"
 import React, { useState } from 'react'
+import { SignInCont } from "./style"
 
-const SignInCont = styled.div`
-    background-color: #F2F2F2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    font-weight: bold;
-`
 
 const SignIn = () => {
 
