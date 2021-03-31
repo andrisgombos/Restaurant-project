@@ -6,6 +6,8 @@ import Food from '../../assets/pictures/asian_food.jpeg';
 import {Mainsection} from '../../globalStyle/globalStyle';
 import Restaurant from '../../assets/pictures/restaurant1.jpeg'
 import StarRating from '../starrating/index'
+import RestaurantGrid from '../restaurants/restaurantGrid/index'
+
 
 const BackgroundColor = styled.main`
 background-color: #f8f8f8;
@@ -61,7 +63,7 @@ border-bottom: 2px solid #e47d32;
 color: #4c4c4c;
 `;
 
-const RestaurantGridContainer = styled.div`
+/* const RestaurantGridContainer = styled.div`
 display: grid;
 grid-template-columns: 20% 20% 20% 20%;
 grid-template-rows: auto;
@@ -91,7 +93,7 @@ const RestaurantImage = styled.img`
 width: 270px;
 height: 270px;
 object-fit: cover;
-`;
+`; */
 
 const Home = () => {
     return (
@@ -104,27 +106,12 @@ const Home = () => {
                 </SearchBarContainer>
                 <HeaderImage src={Food}></HeaderImage>
             </HeaderImageContainer>
-            <Mainsection>
+            
                 <HeadlineContainer>
                     <RestaurantHeadline>Best Rated Restaurants</RestaurantHeadline>
                 </HeadlineContainer>
-                <RestaurantGridContainer>
-                    <RestaurantCard>
-                        <RestaurantName>Example Rest</RestaurantName>
-                        <RestaurantAddress>Bahnhofstrasse 43</RestaurantAddress>
-                        <StarRating rating={2.8}/>
-                        <RestaurantImage src={Restaurant}></RestaurantImage>
-                    </RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                    <RestaurantCard>hello</RestaurantCard>
-                </RestaurantGridContainer>
-            </Mainsection>
+                <RestaurantGrid/>
+            
             <Footer></Footer>
         </BackgroundColor>
     )
