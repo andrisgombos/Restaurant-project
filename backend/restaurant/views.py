@@ -20,6 +20,7 @@ class ListCreateRestaurantView(ListCreateAPIView):
     serializer_class = MainRestaurantSerializer
     search_fields = ['name']
     filter_backends = (filters.SearchFilter,)
+    permission_classes = []
 
     def perform_create(self, serializer):
         serializer.save(restaurant_owner=self.request.user.user_profile)

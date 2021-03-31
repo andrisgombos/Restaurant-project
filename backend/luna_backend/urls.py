@@ -44,7 +44,7 @@ api_patterns = [
     path('reviews/', include('restaurant_review.urls')),
     path('restaurants/', include('restaurant.urls')),
     path('search/', include('search.urls')),
-    path('home/', include('search.urls')),
+    path('home/', include('home.urls')),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 

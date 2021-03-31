@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Own Apps
     'category',
     'comment',
+    'home',
     'registration',
     'restaurant',
     'restaurant_review',
