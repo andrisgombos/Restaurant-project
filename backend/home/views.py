@@ -16,5 +16,5 @@ class ListHighestRatedRestaurantsView(ListCreateAPIView):
 
         With the **POST Method** you can create a new category.
     '''
-    queryset = Restaurant.objects.order_by('street')[:4]
+    queryset = Restaurant.objects.order_by('-reviews__rating')[:4]
     serializer_class = MainRestaurantSerializer
