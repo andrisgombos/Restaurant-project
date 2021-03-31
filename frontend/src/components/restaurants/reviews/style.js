@@ -13,3 +13,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 `;
+
+export const UserInfoContainer = styled.div`
+display: flex;
+`;
