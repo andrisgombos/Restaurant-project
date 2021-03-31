@@ -11,7 +11,19 @@ class MainRestaurantSerializer(serializers.ModelSerializer):
     restaurant_owner = RestaurantUserProfileSerializer(read_only=True)
     categories = MainCategorySerializer(read_only=True, many=True)
 
+    average_rating = serializers.SerializerMethodField()
+
+    def get_average_rating(self, instance):
+        reviews = instance.reviews.all().values()
+        total = 0
+
+        for rating in reviews:
+            total += int(rating.get('rating'))
+
+        average_rating = int(total) / len(reviews)
+        return average_rating
+
     class Meta:
         model = Restaurant
-        fields = ['id', 'name', 'categories', 'country', 'street', 'city', 'zip', 'website', 'phone', 'email', 'opening_hours', 'price_level', 'image', 'reviews', 'restaurant_owner', 'categories']
+        fields = ['id', 'name', 'categories', 'country', 'street', 'city', 'zip', 'website', 'phone', 'email', 'opening_hours', 'price_level', 'image', 'reviews', 'restaurant_owner', 'categories', 'average_rating']
         read_only_fields = ['reviews', 'restaurant_owner', 'categories']
