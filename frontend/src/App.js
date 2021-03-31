@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import Email from "./components/Authentication/Email";
-import { Register } from "./components/Authentication/Registration";
+import { Register } from "./components/Authentication/registration/index";
 //import Verification from "./components/Authentication/Verification";
-import SignIn from "./components/Authentication/Signin"
+import SignIn from "./components/Authentication/signin/index"
 import Home from "./components/home";
 import ProfilePage from './components/userPage';
 import MyProfilePage from "./components/userPage/userMePage";

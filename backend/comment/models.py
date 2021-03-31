@@ -20,7 +20,7 @@ class Comment(models.Model):
     # Set UserProfile (Comment Author)
     user_profile = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE, related_name='comments')
     # Set List of Users that like the comment
-    liked_by = models.ManyToManyField(to=UserProfile, related_name='liked_comments')
+    liked_by = models.ManyToManyField(to=UserProfile, related_name='liked_comments', blank=True)
     # Set review
     review = models.ForeignKey(to=RestaurantReview, on_delete=models.CASCADE, related_name='comments')
 

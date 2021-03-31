@@ -1,23 +1,7 @@
-import styled from 'styled-components'
-import Footer from "../footer";
-import Header from "../header";
-import { RegisterMsg } from "./Registration"
-
-const EmailCont = styled.div`
-    background-color: #F2F2F2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    font-weight: bold;
-`
-const Message = styled.div`
-    font-weight: 400;
-    text-align: center;
-    color: #4C4C4C;
-    width: 25em;
-`
+import Footer from "../../footer";
+import Header from "../../header";
+import { RegisterMsg } from "../registration/style"
+import { EmailCont, Message} from "./style"
 
 
 const Email = () => {
