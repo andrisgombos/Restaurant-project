@@ -87,13 +87,13 @@ class ToggleLikeRestaurantReviewView(UpdateAPIView):
             review.liked_by.add(request.user.user_profile)
             return Response(self.get_serializer(review).data)
 
-        for user in liked_by:
-            if user['id'] == request.user.id:
+        for liker in liked_by:
+            if liker['id'] == request.user.id:
                 review.liked_by.remove(request.user.user_profile)
                 return Response(self.get_serializer(review).data)
 
-        review.liked_by.add(request.user.user_profile)
-        return Response(self.get_serializer(review).data)
+        # review.liked_by.add(request.user.user_profile)
+        # return Response(self.get_serializer(review).data)
 
 
 class ShowLikedRestaurantReviewsView(ListAPIView):
