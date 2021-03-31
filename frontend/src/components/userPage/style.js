@@ -50,6 +50,11 @@ button{
     align-items:center;
     background-color:white;    
     cursor: pointer;
+    :hover{
+        border-left: 2px solid #e47d32;
+        font-weight: bold;
+        color: black;
+    }
     :focus{
         background-color: transparent;
         border-left:orange 5px solid;

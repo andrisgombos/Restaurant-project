@@ -6,7 +6,10 @@ const HeaderContainer = styled.div`
 display: flex;
 width: 100%;
 justify-content: space-between;
-background-color: white;
+position:sticky;
+top:0;
+background-color:#f8f8f8;
+opacity:0.9;
 `;
 
 const Logo = styled.img`

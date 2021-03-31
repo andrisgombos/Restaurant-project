@@ -18,7 +18,10 @@ export default function MyProfilePage() {
         </TitleImage>
         <Background>
             <Mainsection>
+                {/* next component holds the menu and the picture */}
                 <UserSelfMenuCard  /> 
+                {/* next component holds whatever is rendered by the menuselection -- reviews sorted by date is default */}
+                 
                 <CenterContainer />
                 <AboutUserContainer />
             </Mainsection>
