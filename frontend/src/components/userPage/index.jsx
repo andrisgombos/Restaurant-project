@@ -10,6 +10,7 @@ import AboutUser from "./aboutUser";
 
 
 export default function ProfilePage() {
+    
     return (
         <>
         <Header />
