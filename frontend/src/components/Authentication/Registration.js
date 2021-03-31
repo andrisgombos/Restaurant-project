@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Footer from "../footer";
 import Header from "../header";
 
-// eslint-disable-next-line
+//eslint-disable-next-line
 const RegisterCont = styled.div`
     background-color: #F2F2F2;
     display: flex;
@@ -45,8 +45,7 @@ export const Button = styled.button`
     margin-top: 3em;
 `
 
-export const Register = () => {
-
+ export const Register = () => {
 
 
     return  <>
@@ -59,4 +58,3 @@ export const Register = () => {
                 <Footer/>
             </>
 }
-

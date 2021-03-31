@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header';
 import Footer from '../footer';
-import {Mainsection} from '../../globalStyle/globalStyle';
+// import {Mainsection} from '../../globalStyle/globalStyle';
 import RestaurantGrid from '../restaurants/restaurantGrid/index'
 import {BackgroundColor,
         SearchBarContainer,

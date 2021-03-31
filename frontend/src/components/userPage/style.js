@@ -12,12 +12,12 @@ export const TitleImage = styled.div`
 `;
 
 export  const Mainsection = styled.div`
-    height:auto;
+    height:100%;
     width:80%;
     margin-left: auto;
     margin-right: auto;
-    background-color:transparent;
-    display:flex;
+    background-color: transparent;
+    display: flex;
 `;
 
 export const Card = styled.div`
@@ -71,9 +71,7 @@ button{
         height:auto;
         width:auto;
     }
-    :active{
-        
-    }
+    
 
 }
 `
