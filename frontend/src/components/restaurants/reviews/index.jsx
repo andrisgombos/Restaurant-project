@@ -1,15 +1,22 @@
 import React from 'react';
-import {Mainsection} from '../../../globalStyle/globalStyle';
-import RestaurantGrid from '../../restaurants/restaurantGrid/index'
 import Restaurants from '..';
-import {BackgroundColor} from './style'
-
+import {BackgroundColor, ReviewCard} from './style'
+import { RestaurantGridContainer } from '../restaurantGrid/style';
+import Header from '../../header';
+import Footer from '../../footer';
+import {Mainsection} from '../../../globalStyle/globalStyle'
 
 const Reviews = () => {
     return (
         <BackgroundColor>
-            <Restaurants/>
-            <RestaurantGrid/>
+            <Header/>
+            <Mainsection>
+                <RestaurantGridContainer>
+                    <ReviewCard></ReviewCard>
+                    
+                </RestaurantGridContainer>
+            </Mainsection>
+            <Footer/>
         </BackgroundColor> 
         )
 }

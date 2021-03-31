@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 // import {Mainsection} from '../../globalStyle/globalStyle';
@@ -7,10 +7,13 @@ import {BackgroundColor,
         SearchBarContainer,
         InputField,
         CategoriesContainer,
-        CategorieUnderline,
+        CategoriesUnderline,
         Categories} from './style'
 
+
+
 const Restaurants = () => {
+
     return (
         <BackgroundColor>
             <Header></Header>
@@ -18,11 +21,11 @@ const Restaurants = () => {
                 <InputField placeholder="Search"></InputField>
             </SearchBarContainer>
             <CategoriesContainer>
-                <CategorieUnderline>
+                <CategoriesUnderline>
                     <Categories>Restaurants</Categories>
                     <Categories>Reviews</Categories>
                     <Categories>Users</Categories>
-                </CategorieUnderline>
+                </CategoriesUnderline>
             </CategoriesContainer>
             <RestaurantGrid></RestaurantGrid>
             <Footer></Footer>
