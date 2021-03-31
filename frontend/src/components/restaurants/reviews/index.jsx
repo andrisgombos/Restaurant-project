@@ -1,5 +1,5 @@
 import React from 'react';
-import {BackgroundColor, ReviewCard, UserInfoContainer, UserImage, UserInfo, UserReviewsAmount, UserInfoTextContainer, RestaurantInfo} from './style'
+import {BackgroundColor, ReviewCard, UserInfoContainer, UserImage, UserInfo, UserReviewsAmount, UserInfoTextContainer, RestaurantInfo, TopContainer, Button, LatestComments, LatestCommentsContainer, CommentName, Comment, ButtonContainer} from './style'
 import { RestaurantGridContainer } from '../restaurant/style';
 import Header from '../../header';
 import Footer from '../../footer';
@@ -20,8 +20,20 @@ const Reviews = () => {
                                 <UserReviewsAmount>6 Reviews in Total</UserReviewsAmount>
                             </UserInfoTextContainer>
                         </UserInfoContainer>
-                        <RestaurantInfo>XY Bar</RestaurantInfo>
-                        <UserReviewsAmount>This is a comment</UserReviewsAmount>
+                            <TopContainer>
+                                <RestaurantInfo>XY Bar</RestaurantInfo>
+                                <UserReviewsAmount>This is a comment</UserReviewsAmount>
+                            </TopContainer>
+                            <ButtonContainer>
+                                <Button>Like / Comment</Button>
+                            </ButtonContainer>
+                            <LatestCommentsContainer>
+                                <LatestComments>Latest Comments</LatestComments>
+                                <CommentName>My Name</CommentName>
+                                <Comment>Lorem ipsum dolor sit amet this is a placeholder halle hallo</Comment>
+                                <CommentName>My Name</CommentName>
+                                <Comment>Lorem ipsum dolor sit amet this is a placeholder halle hallo</Comment>
+                            </LatestCommentsContainer>
                     </ReviewCard>
                     
                 </RestaurantGridContainer>
