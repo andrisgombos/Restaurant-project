@@ -52,6 +52,12 @@ border-top-left-radius:0;
 margin-left:1px;
 font-size:16px;
 border:none;
+:focus{
+    outline:transparent;
+}
+:hover{
+    font-weight:bolder;
+}
 `;
 
 const ButtonSignUp  = styled(OrangeButton)`
@@ -63,9 +69,14 @@ border-top-right-radius:0;
 margin-right:1px;
 border: none;
 font-size:16px;
-
-
+:focus{
+    outline:transparent;
+}
+:hover{
+    font-weight:bolder;
+}
 `;
+
 
 
 const Header = () => {
