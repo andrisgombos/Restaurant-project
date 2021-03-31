@@ -6,7 +6,7 @@ import Header from '../header'
 import { TitleImage, Mainsection } from './style'
 import CenterContainer from './userCenter'
 import UserSelfMenuCard from './UserSelfMenuCard'
-import { AboutUserContainer } from './aboutUser/style'
+import AboutUser from "./aboutUser";
 
 
 export default function MyProfilePage() {
@@ -23,7 +23,7 @@ export default function MyProfilePage() {
                 {/* next component holds whatever is rendered by the menuselection -- reviews sorted by date is default */}
                  
                 <CenterContainer />
-                <AboutUserContainer />
+                <AboutUser />
             </Mainsection>
         </Background>
         <Footer />

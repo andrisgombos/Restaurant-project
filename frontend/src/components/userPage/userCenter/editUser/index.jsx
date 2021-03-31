@@ -52,7 +52,6 @@ export default function EditProfile() {
             .then(data=>{
                 console.log(data);
             });
-
         };
         
         

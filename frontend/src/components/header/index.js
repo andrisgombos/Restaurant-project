@@ -9,7 +9,8 @@ justify-content: space-between;
 position:sticky;
 top:0;
 background-color:#f8f8f8;
-opacity:0.9;
+opacity:1;
+z-index: 5;  
 `;
 
 const Logo = styled.img`
