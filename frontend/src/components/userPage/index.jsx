@@ -6,7 +6,7 @@ import Header from '../header'
 import  { TitleImage , Mainsection } from './style'
 import UserMenuCard from './UserMenuCard'
 import CenterContainer from './userCenter';
-import { AboutUserContainer } from './aboutUser/style'
+import AboutUser from "./aboutUser";
 
 
 export default function ProfilePage() {
@@ -21,7 +21,7 @@ export default function ProfilePage() {
                 {/* if the Token is stored then render  the self-menu-card, if no token is present re-direct to signUp page*/}
                 <UserMenuCard />
                 <CenterContainer />
-                <AboutUserContainer />
+                <AboutUser />
             </Mainsection>
         </Background>
         <Footer />

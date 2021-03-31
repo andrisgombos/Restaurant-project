@@ -4,7 +4,7 @@ import Header from "../header";
 import React, {useState} from 'react';
 
 
-// eslint-disable-next-line
+//eslint-disable-next-line
 const RegisterCont = styled.div`
     background-color: #F2F2F2;
     display: flex;
@@ -83,4 +83,4 @@ export const Register = () => {
                 <Footer/>
             </>
 }
-
+g
