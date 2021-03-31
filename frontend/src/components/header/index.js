@@ -1,4 +1,6 @@
 import React from 'react';
+// import { Route, Switch, Link,useHistory } from 'react-router-dom'
+
 import styled from 'styled-components';
 import lunaLogo from '../../assets/icon/logo.svg'
 
@@ -9,7 +11,8 @@ justify-content: space-between;
 position:sticky;
 top:0;
 background-color:#f8f8f8;
-opacity:0.9;
+opacity:1;
+z-index: 5;  
 `;
 
 const Logo = styled.img`
@@ -44,6 +47,8 @@ height: 20px;
 //margin-left: 10px;
 border:none;
 `;
+
+
 
 
 const Header = () => {
