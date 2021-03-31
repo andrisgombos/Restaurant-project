@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Header from '../header';
 import Footer from '../footer';
 import Food from '../../assets/pictures/asian_food.jpeg';
-import {Mainsection} from '../../globalStyle/globalStyle';
-import Restaurant from '../../assets/pictures/restaurant1.jpeg'
-import StarRating from '../starrating/index'
+// import {Mainsection} from '../../globalStyle/globalStyle';
+// import Restaurant from '../../assets/pictures/restaurant1.jpeg'
+// import StarRating from '../starrating/index'
 import RestaurantGrid from '../restaurants/restaurantGrid/index'
 
 

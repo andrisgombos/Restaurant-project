@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from '../header';
 import Footer from '../footer';
-import {Mainsection} from '../../globalStyle/globalStyle';
+// import {Mainsection} from '../../globalStyle/globalStyle';
 import RestaurantGrid from '../restaurants/restaurantGrid/index'
 
 const BackgroundColor = styled.main`
