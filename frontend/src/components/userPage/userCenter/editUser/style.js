@@ -33,7 +33,4 @@ export const ResetButton = styled.button`
             :hover{
                 font-weight:bold;
             }
-            
-        
-
 `;
