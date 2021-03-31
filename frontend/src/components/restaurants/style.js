@@ -24,7 +24,7 @@ display: flex;
 justify-content: center;
 `;
 
-export const CategorieUnderline = styled.div`
+export const CategoriesUnderline = styled.div`
 border-bottom: 1px solid #e9e9e9;
 display: flex;
 `;

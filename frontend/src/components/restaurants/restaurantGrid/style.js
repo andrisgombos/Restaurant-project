@@ -16,7 +16,6 @@ background-color: white;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-
 `;
 
 export const RestaurantName = styled.p`
