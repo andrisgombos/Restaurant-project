@@ -12,7 +12,6 @@ const lunaReducer = (state = initialState, action) => {
             const newState = {...state};
             newState.email = action.payload
             return newState;
-            break;
         default:
             return state;
     }
