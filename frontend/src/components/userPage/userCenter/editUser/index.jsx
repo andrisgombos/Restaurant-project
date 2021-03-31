@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { InputBox, InputWithLabel, TextFieldWithLabel } from '../../../../globalStyle/globalStyle'
-import { Main } from './style'
+import { InputBox, InputWithLabel, TextFieldWithLabel, OrangeButton } from '../../../../globalStyle/globalStyle'
+import { BottomPart, Main } from './style'
 
 // this is just a test
 
@@ -133,18 +133,26 @@ export default function EditProfile() {
                                     onChange={(e)=>setThings_user_loves(e.target.value)}/>
                             </InputBox>
                             <InputBox>
-                            <label for="about">About</label>
+                            <label for="about">Description</label>
                             <TextFieldWithLabel
                                     rows="4" cols="50"                                
                                     id="about"
                                     value= {undefined }
                                     type="textfield"
-                                    placeholder="About"
+                                    placeholder="I am ... "
                                     onChange={(e)=>setdescription(e.target.value)}/>
                             </InputBox>
                             </section>
-                   <button type="submit" onClick={editProfileHandler}>SAVE</button>
-                   </form>
+                    <BottomPart>
+                    <div>
+                    <OrangeButton type="submit" onClick={editProfileHandler}>SAVE</OrangeButton>
+                    </div>
+                    <div>
+                        <p>Delete account</p>
+                        <p>Reset Password</p>
+                    </div>
+                    </BottomPart>
+                    </form>
             </Main>
                                     
             
