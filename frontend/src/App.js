@@ -6,9 +6,9 @@ import SignIn from "./components/Authentication/Signin"
 import Home from "./components/home";
 import ProfilePage from './components/userPage';
 import MyProfilePage from "./components/userPage/userMePage";
-import Restaurants from "./components/restaurants/index";
-import CreateNewRestaurant from "./components/createNewRestaurant/index";
-
+import Restaurants from "./components/restaurants/index"
+import Reviews from "./components/restaurants/reviews";
+import CreateNewRestaurant from "./components/createNewRestaurant";
 //import {withAuth} from './components/HOC'
 
 const App = () => {
@@ -23,7 +23,9 @@ const App = () => {
         {/*next line is just to test pages */}
         <Route exact path='/user-self' component={MyProfilePage}/>
         <Route exact path='/restaurants' component={Restaurants}/>
+        <Route exact path='/reviews' component={Reviews}/>
         <Route exact path='/create-new-restaurant' component={CreateNewRestaurant}/>
+
 
         {/*<Route exact path='/user-self' component={withAuth(MyProfilePage)}/>*/}
       </Switch>
