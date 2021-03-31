@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import OrangeButton from '../../globalStyle/globalStyle'
+import OrangeButton from '../../globalStyle'
 
 export const HeaderContainer = styled.div`
 display: flex;
