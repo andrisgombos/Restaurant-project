@@ -43,9 +43,14 @@ export const Background = styled.div`
 `;
 
 export const InputWithLabel = styled.input`
-    width:300px;
-    height:40px;
+    width:324px;
+    height:52px;
     margin-top:5px;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 3px;
+
 
 `;
 export const InputBox = styled.div`
@@ -55,10 +60,40 @@ export const InputBox = styled.div`
     margin:10px;
 
 
+
 `;
 
 export const TextFieldWithLabel = styled.textarea`
     width:500px;
     margin-bottom:10px;
     margin-top:5px;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 3px;
+    resize:none;
+    ::-webkit-scrollbar {
+    width: 0.5em;
+    }
+ 
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+ 
+    ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    }
 `;
+
+export const OrangeButton = styled.button`
+    width: 200px;
+    height:57px;
+    align-self: center;
+    border-radius: 28px;
+    color: #F8F8FF;
+    border: none;
+    background-color: #E47D31;
+    font-size: 1.5rem;
+    
+`
