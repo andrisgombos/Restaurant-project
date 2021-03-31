@@ -1,60 +1,63 @@
 import React from 'react';
 import Header from '../header';
 import Footer from '../footer';
-import {PlainText, VerificationCont, RegButton, InputHolder, InputField, RegisterMsg} from './style'
+import {
+    InputField, CreateRestaurantButton, CreateRestaurantHeader, NewRestaurantContainer, InputFieldsContainer,
+    InvisibleText, GreyText, UploadImageButton,
+} from './style'
 
 
 const CreateNewRestaurant = () => {
     return <>
                 <Header/>
-                    <VerificationCont>
-                        <RegisterMsg>Create New Restaurant</RegisterMsg>
-                        <InputHolder>
+                    <NewRestaurantContainer>
+                        <CreateRestaurantHeader>Create New Restaurant</CreateRestaurantHeader>
+                        <InputFieldsContainer>
                             <div>
                                 <text>Basic</text>
-                                <PlainText>Name</PlainText>
+                                <GreyText>Name *</GreyText>
                                 <InputField name='Name' type='text'/>
                                 <text>Address</text>
-                                <PlainText>Street</PlainText>
+                                <GreyText>Street *</GreyText>
                                 <InputField name='Street' type='text'/>
                                 <text>Contact</text>
-                                <PlainText>Website</PlainText>
+                                <GreyText>Website</GreyText>
                                 <InputField name='Website' type='text'/>
                                 <text>Details</text>
-                                <PlainText>Opening hours</PlainText>
+                                <GreyText>Opening hours *</GreyText>
                                 <InputField name='Opening hours' type='text'/>
                             </div>
                             <div>
-                                <text>.</text>
-                                <PlainText>Category</PlainText>
-                                <InputField name='Category' type='text' placeholder='Select a value...'/>
-                                <text>.</text>
-                                <PlainText>City</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Category *</GreyText>
+                                <InputField name='Category' type='dropdown' placeholder='Select a value...'/>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>City *</GreyText>
                                 <InputField name='City' type='text'/>
-                                <text>.</text>
-                                <PlainText>Phone</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Phone *</GreyText>
                                 <InputField name='Phone' type='text'/>
-                                <text>.</text>
-                                <PlainText>Price level</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Price level</GreyText>
                                 <InputField name='Price level' type='text' placeholder='Select a value...'/>
                             </div>
                             <div>
-                                <text>.</text>
-                                <PlainText>Country</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Country *</GreyText>
                                 <InputField name='Country' type='text' placeholder='Select a value...'/>
-                                <text>.</text>
-                                <PlainText>Zip</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Zip</GreyText>
                                 <InputField name='Zip' type='text'/>
-                                <text>.</text>
-                                <PlainText>Email</PlainText>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Email</GreyText>
                                 <InputField name='Email' type='text'/>
-                                <text>.</text>
-                                <PlainText>Image</PlainText>
-                                <InputField name='Image' type='text'/>
+                                <InvisibleText>.</InvisibleText>
+                                <GreyText>Image</GreyText>
+                                <InputField name='Image' type='file'/>
                             </div>
-                        </InputHolder>
-                        <RegButton type='submit'>Create Restaurant</RegButton>
-                    </VerificationCont>
+                        </InputFieldsContainer>
+                        <CreateRestaurantButton type='submit'>Create Restaurant</CreateRestaurantButton>
+                    </NewRestaurantContainer>
                 <Footer/>
     </>
 }
