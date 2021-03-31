@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import { InputBox, InputWithLabel, TextFieldWithLabel, OrangeButton } from '../../../../globalStyle/globalStyle'
 import { BottomPart, Main } from './style'
-
+import {connect} from 'react-redux';
 // this is just a test
 
 
 
 
 
-export default function EditProfile() {
+function EditProfile() {
 
 
     const [username, setUsername] = useState("")
@@ -52,11 +52,11 @@ export default function EditProfile() {
             .then(data=>{
                 console.log(data);
             });
-
         };
         
         
         
+
         return (
             <>
             {/* <SetPicture> */}
@@ -67,7 +67,7 @@ export default function EditProfile() {
                <form>
                    <section>
                             <InputBox>
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <InputWithLabel
                                     required    
                                     id="username"
@@ -77,7 +77,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setUsername(e.target.value)}/>
                             </InputBox>
                             <InputBox> 
-                            <label for="firstname">First Name</label>
+                            <label htmlFor="firstname">First Name</label>
                             <InputWithLabel                                
                                     id="firstname"
                                     value= {undefined }
@@ -86,7 +86,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setFirst_name(e.target.value)}/>
                             </InputBox>
                             <InputBox>
-                            <label for="lastname">Last Name</label>
+                            <label htmlFor="lastname">Last Name</label>
                             <InputWithLabel 
                                   
                                         id="lastname"
@@ -96,7 +96,7 @@ export default function EditProfile() {
                                         onChange={(e)=>setLast_name(e.target.value)}/>
                             </InputBox>
                             <InputBox>
-                            <label for="email">E-Mail</label>
+                            <label htmlFor="email">E-Mail</label>
                             <InputWithLabel                                
                                     id="email"
                                     value= {undefined }
@@ -105,7 +105,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setEmail(e.target.value)}/>
                             </InputBox>
                             <InputBox>
-                            <label for="location">Location</label>
+                            <label htmlFor="location">Location</label>
                             <InputWithLabel                                
                                     id="location"
                                     value= {undefined }
@@ -114,7 +114,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setLocation(e.target.value)}/>
                             </InputBox>
                             <InputBox>  
-                            <label for="phone">Phone</label>       
+                            <label htmlFor="phone">Phone</label>       
                             <InputWithLabel                                
                                     id="phone"
                                     value= {undefined }
@@ -123,7 +123,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setPhone(e.target.value)}/>      
                             </InputBox>
                             <InputBox>
-                            <label for="Til">Things I love</label>
+                            <label htmlFor="Til">Things I love</label>
                             <TextFieldWithLabel
                                     rows="4" cols="50"
                                     id="Til"
@@ -133,7 +133,7 @@ export default function EditProfile() {
                                     onChange={(e)=>setThings_user_loves(e.target.value)}/>
                             </InputBox>
                             <InputBox>
-                            <label for="about">Description</label>
+                            <label htmlFor="about">Description</label>
                             <TextFieldWithLabel
                                     rows="4" cols="50"                                
                                     id="about"
@@ -148,8 +148,8 @@ export default function EditProfile() {
                     <OrangeButton type="submit" onClick={editProfileHandler}>SAVE</OrangeButton>
                     </div>
                     <div>
-                        <p>Delete account</p>
-                        <p>Reset Password</p>
+                        <button>Delete account</button>
+                        <button>Reset Password</button>
                     </div>
                     </BottomPart>
                     </form>
@@ -159,4 +159,12 @@ export default function EditProfile() {
         </>
     )
 }
+
+const mapStateToProps =(state) => {
+    return ({
+        email:state.email
+    })
+}
+
+export default connect(mapStateToProps)(EditProfile)
 

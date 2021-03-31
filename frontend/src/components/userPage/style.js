@@ -71,9 +71,7 @@ button{
         height:auto;
         width:auto;
     }
-    :active{
-        
-    }
+    
 
 }
 `
