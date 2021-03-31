@@ -17,11 +17,16 @@ class MainRestaurantSerializer(serializers.ModelSerializer):
         reviews = instance.reviews.all().values()
         total = 0
 
-        for rating in reviews:
-            total += int(rating.get('rating'))
+        if len(reviews) == 0:
+            average_rating = 0
+            return average_rating
+        else:
+            for rating in reviews:
+                total += int(rating.get('rating'))
 
-        average_rating = int(total) / len(reviews)
-        return average_rating
+            average_rating = int(total) / len(reviews)
+            return average_rating
+
 
     class Meta:
         model = Restaurant
