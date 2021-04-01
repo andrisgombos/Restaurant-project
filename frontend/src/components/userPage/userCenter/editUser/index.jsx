@@ -1,14 +1,20 @@
 import React, {useState} from 'react'
 import { InputBox, InputWithLabel, TextFieldWithLabel, OrangeButton } from '../../../../globalStyle/globalStyle'
 import { BottomPart, Main, ResetButton } from './style'
-import {connect} from 'react-redux';
-// this is just a test
+import {connect,useDispatch} from 'react-redux';
+import { deleteSelfAction } from '../../../../store/actions/deleteSelf';
+import {useHistory} from 'react-router-dom';
+
+
 
 
 
 
 
 function EditProfile() {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const token = localStorage.getItem('token');
 
@@ -21,16 +27,13 @@ function EditProfile() {
         const credentials = {
           token: token
         }
-        dispatch(signInAction(credentials, history))
+        console.log("in da delete hadler");
+        dispatch(deleteSelfAction(credentials, history))
   };
 
+  //===================================================================
 
-
-
-
-    //===================================================================
-
-    // edit handler======================================================
+    //========== edit handler======================================================
     const [username, setUsername] = useState("")
     const [first_name, setFirst_name] = useState("")
     const [last_name,setLast_name] = useState("")
@@ -163,7 +166,7 @@ function EditProfile() {
                     
                     <OrangeButton type="submit" onClick={editProfileHandler}>SAVE</OrangeButton>
                     <div>
-                        <ResetButton>Delete account</ResetButton>
+                        <ResetButton onClick={deleteHandler} >Delete account</ResetButton>
                         <ResetButton>Reset Password</ResetButton>
                     </div>
                     </BottomPart>
