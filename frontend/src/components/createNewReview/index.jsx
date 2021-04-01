@@ -1,8 +1,17 @@
 import React, { useState } from "react"
 import Header from '../header'
 import Footer from '../footer'
-import {InputField, InputFieldContainer, NewReviewContainer, ReviewTitleImage, SubmitReviewButton,} from './style'
+import {
+    InputField,
+    InputFieldContainer,
+    NewReviewContainer,
+    ReviewTitleImage,
+    SelectRating, SelectRatingContainer, StarImage,
+    SubmitReviewButton,
+} from './style'
 import AsianFood from "../../assets/pictures/asian_food.jpeg"
+import Star from "../../assets/icon/star.svg"
+
 
 
 
@@ -13,7 +22,7 @@ const CreateNewReview = () => {
     const newReviewHandler = (event) => {
         event.preventDefault();
         // need restaurant id for url? how can this be automated? currently manual
-        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/create/restaurant/1/";
+        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/create/restaurant/7/";
 
             let reviewDetails = {
                 text_content: text_content,
@@ -41,11 +50,30 @@ const CreateNewReview = () => {
         </ReviewTitleImage>
         <NewReviewContainer>
             <InputFieldContainer>
+                <SelectRatingContainer>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <SelectRating>Select your rating</SelectRating>
+                </SelectRatingContainer>
                 <InputField
                     name='text_content'
                     type='text'
+                    required
                     placeholder={"Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review or if you're connected in any way to the owner or employees."}
-                    onfocus={"this.placeholder = ''"}
+                    // onfocus={"this.placeholder = ''"}
                     value= {undefined} onChange={(e)=>setText_content(e.target.value)}/>
                 <SubmitReviewButton  type='submit' onClick={newReviewHandler}>Submit</SubmitReviewButton>
             </InputFieldContainer>
