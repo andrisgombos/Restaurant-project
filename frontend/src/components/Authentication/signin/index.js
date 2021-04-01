@@ -6,11 +6,15 @@ import { SignInCont } from "./style"
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
+import {useDispatch} from 'react-redux';
+import {signInAction} from "../../../store/actions/signInAction"
 
 
-const SignIn = () => {
+const SignIn = (props) => {
 
-    let history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory()
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -20,20 +24,7 @@ const SignIn = () => {
             email: email,
             password: password
         }
-        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/auth/token/";
-        const signInConfig = {
-            method: "POST",
-            body: JSON.stringify(credentials),
-            headers: { 'Content-Type': 'application/json'}       
-        };
-        fetch(url, signInConfig)
-        .then(result => result.json())
-        .then(data => {
-            console.log(data);
-            // dispatch + move to homepage
-            localStorage.setItem('token', data.access);
-            history.push('/home');
-        })
+        dispatch(signInAction(credentials, history))
     }
 
     return  <>

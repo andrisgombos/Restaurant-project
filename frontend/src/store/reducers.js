@@ -5,7 +5,6 @@ import { combineReducers } from 'redux';
 const initialState = {
     token: '',
     email: '',
-    count:"",
     userMe:[],
     allUsers: [],
 }
@@ -22,6 +21,14 @@ const lunaReducer = (state = initialState, action) => {
         
     }
 }
+
+const menuCount = (state= {pageId:"0"}, action) => {
+    if(action.type === 'MENUCOUNTER'){
+        return {...state, pageId: action.payload}
+    }
+    return state
+}
+
 
 
 
@@ -51,6 +58,7 @@ export const rootReducer = combineReducers({
     allUsersReducer,
     getLoggedInUser,
     deleteUserAction,
+    menuCount,
 });
 
 

@@ -11,6 +11,9 @@ import Reviews from "./components/restaurants/reviews";
 import CreateNewRestaurant from "./components/createNewRestaurant";
 import CreateNewReview from "./components/createNewReview";
 // import {withAuth} from './components/HOC'
+import Users from "./components/restaurants/users";
+
+
 
 
 
@@ -31,7 +34,7 @@ const App = () => {
         <Route exact path='/user' component={ProfilePage}/>
         {/*next line is just to test pages */}
         <Route exact path='/user-self' component={MyProfilePage}/>
-        <Route exact path='/restaurants' component={Restaurants}/>
+         <Route exact path='/restaurants' component={Restaurants}/> 
         <Route exact path='/reviews' component={Reviews}/>
         {/*<Route exact path='/users' component={Users}/>*/}
         <Route exact path='/create-new-restaurant' component={CreateNewRestaurant}/>
