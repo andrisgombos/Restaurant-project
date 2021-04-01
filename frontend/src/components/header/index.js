@@ -85,19 +85,31 @@ const Header = () => {
 
     const goToProfile = () => {
         history.push('/user-self')
-    
     }
+
+    const goToHome = () => {
+        history.push('/home')
+    }
+
+    const goTologIn = () => {
+        history.push('/sign-in')
+    }
+    const goTosignUp = () => {
+        history.push('/user-self')
+    }
+
+
 
     return (
         <>
         <HeaderContainer>
             <Logo src={lunaLogo}></Logo>
             <RightContainer>
-                <HeaderLink>Home</HeaderLink>
+                <HeaderLink onClick={ goToHome }>Home</HeaderLink>
                 <HeaderLink>Search</HeaderLink>
                 <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
-                <ButtonSignUp>LOGIN</ButtonSignUp>
-                <ButtonSignIn>SIGNUP</ButtonSignIn>
+                <ButtonSignUp onClick={goTologIn}>LOGIN</ButtonSignUp>
+                <ButtonSignIn onClick={goTosignUp}>SIGNUP</ButtonSignIn>
 
             </RightContainer>
         </HeaderContainer>
