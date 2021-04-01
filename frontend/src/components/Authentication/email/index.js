@@ -2,9 +2,10 @@ import Footer from "../../footer";
 import Header from "../../header";
 import { RegisterMsg } from "../registration/style"
 import { EmailCont, Message} from "./style"
+import { Link } from 'react-router-dom';
 
 
-const Email = () => {
+ const Email = () => {
 
     return  <>
                 <Header/>
