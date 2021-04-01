@@ -2,7 +2,8 @@
 
 const initialState = {
     token: '',
-    email: ''
+    email: '',
+    count:"",
 }
 
 const lunaReducer = (state = initialState, action) => {
@@ -12,8 +13,13 @@ const lunaReducer = (state = initialState, action) => {
             const newState = {...state};
             newState.email = action.payload
             return newState;
+        case 'MENUCOUNTER':
+            return {...state,count:action.payload}
+            
+            
         default:
             return state;
+        
     }
 }
 

@@ -2,28 +2,36 @@ import Footer from "../../footer";
 import Header from "../../header";
 import React, {useState} from 'react';
 import { RegisterCont, RegisterMsg, Inputfield, Button} from "./style"
+import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 export const Register = () => {
 
     const [regEmail,setEmail] = useState("");
+
+    const dispatch = useDispatch();
+    const history = useHistory()
+
+    // <Link to='/sucess'> </Link>
 
     const regHandler = (e) => {
         e.preventDefault();
         const credentials = {
             email: regEmail,
         }
-        const url = "TBD";
+        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/auth/registration/";
         const regConfig =  {
             method: "POST",
             body: JSON.stringify(credentials),
             headers: { 'Content-Type': 'application/json'}       
         };
         fetch(url, regConfig)
-        .then(result => {return result.json})
+        .then(result => result.json())
         .then(data => {
             console.log(data);
-            // move to next page
         })
+        history.push("/sucess");
     }
 
     return  <>

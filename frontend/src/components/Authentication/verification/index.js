@@ -2,6 +2,7 @@ import Footer from "../../footer";
 import Header from "../../header";
 import { RegisterMsg, Inputfield } from "../Registration"
 import { VerificationCont, InputHolder, RegButton } from "./style"
+import { Link } from 'react-router-dom';
 
 const Verification = () => {
     return  <>

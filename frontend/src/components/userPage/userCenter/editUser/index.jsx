@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { InputBox, InputWithLabel, TextFieldWithLabel, OrangeButton } from '../../../../globalStyle/globalStyle'
-import { BottomPart, Main } from './style'
+import { BottomPart, Main, ResetButton } from './style'
 import {connect} from 'react-redux';
 // this is just a test
 
@@ -143,17 +143,16 @@ function EditProfile() {
                                     onChange={(e)=>setdescription(e.target.value)}/>
                             </InputBox>
                             </section>
+                        </form>
+                    </Main>
                     <BottomPart>
-                    <div>
+                    
                     <OrangeButton type="submit" onClick={editProfileHandler}>SAVE</OrangeButton>
-                    </div>
                     <div>
-                        <button>Delete account</button>
-                        <button>Reset Password</button>
+                        <ResetButton>Delete account</ResetButton>
+                        <ResetButton>Reset Password</ResetButton>
                     </div>
                     </BottomPart>
-                    </form>
-            </Main>
                                     
             
         </>
