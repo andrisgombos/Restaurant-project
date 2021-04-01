@@ -7,18 +7,11 @@ import {useHistory} from 'react-router-dom';
 
 
 
-
-
-
-
 function EditProfile() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-
     const token = localStorage.getItem('token');
-
-
 
     //===== Delete handler=============================================
 
@@ -30,8 +23,6 @@ function EditProfile() {
         console.log("in da delete hadler");
         dispatch(deleteSelfAction(credentials, history))
   };
-
-  //===================================================================
 
     //========== edit handler======================================================
     const [username, setUsername] = useState("")
@@ -68,11 +59,10 @@ function EditProfile() {
             .then(res=> res.json())
             .then(data=>{
                 console.log(data);
-            });
+        });
         };
         
      //========================================================================   
-        
 
         return (
             <>
@@ -170,10 +160,8 @@ function EditProfile() {
                         <ResetButton>Reset Password</ResetButton>
                     </div>
                     </BottomPart>
-                                    
-            
-        </>
-    )
+            </>
+        )
 }
 
 const mapStateToProps =(state) => {
