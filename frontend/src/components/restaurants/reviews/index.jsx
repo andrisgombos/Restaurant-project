@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {BackgroundColor, ReviewCard, UserInfoContainer, UserImage, UserInfo, UserReviewsAmount, UserInfoTextContainer, RestaurantInfo, TopContainer, Button, LatestComments, LatestCommentsContainer, CommentName, Comment, ButtonContainer, LikeButton, CommentButton} from './style'
-import { RestaurantGridContainer } from '../restaurant/style';
+import { RestaurantGridContainer} from '../restaurant/style';
+import {CategoriesContainer, CategoriesUnderline, Categories} from '../../restaurants/style'
 import {ButtonSignIn, ButtonSignUp} from '../../header/index'
 import Header from '../../header';
 import Footer from '../../footer';
 import {Mainsection} from '../../../globalStyle/globalStyle'
+import { useHistory } from 'react-router-dom';
+import Navbar from '../navbar'
+
 
 const Reviews = () => {
     
@@ -47,12 +51,25 @@ const Reviews = () => {
             .catch(err => setErrors(err));
     }
 
-    console.log(users);
+    const history = useHistory();
+
+    const goToRestaurants = () => {
+        history.push('/restaurants');
+    }
+
+    const goToUsers = () => {
+        history.push('/users');
+    }
+
+    const goToReviews = () => {
+        history.push('/reviews');
+    }
 
     return (
         <BackgroundColor>
             <Header/>
             <Mainsection>
+                <Navbar/>
                 <RestaurantGridContainer>
                 {users.map((user) =>
                     <ReviewCard key={user.id}>

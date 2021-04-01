@@ -4,6 +4,8 @@ import { RestaurantGridContainer } from '../restaurant/style';
 import Header from '../../header';
 import Footer from '../../footer';
 import {Mainsection} from '../../../globalStyle/globalStyle'
+import Navbar from '../navbar'
+
 
 const Users = () => {
     
@@ -33,6 +35,7 @@ console.log(users);
     return (
         <BackgroundColor>
             <Header/>
+            <Navbar/>
             <Mainsection>
                 <RestaurantGridContainer>
                 {users.map((user) =>
