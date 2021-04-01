@@ -43,7 +43,7 @@ const CreateNewRestaurant = () => {
         formData.append('price_level', 'price_level')
         formData.append('email', 'email')
 
-        const restaurantDetails = {
+        let restaurantDetails = {
             name: name,
             country: country,
             street: street,
@@ -60,7 +60,7 @@ const CreateNewRestaurant = () => {
 
         const config = {
             method: "POST",
-            body: JSON.stringify(formData),
+            body: JSON.stringify(restaurantDetails),
             headers: new Headers ({
                 // "Authorization": `Bearer ${token}`,
                 "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg4NDA4LCJqdGkiOiIyMDI0M2RlNDk2MjE0N2I5YjFjNjU2MTdhNDg5MDNiMiIsInVzZXJfaWQiOjF9.s2BCrO0ezAl3j77MH8BNTvXwdxgDfgtVLOmY4n8wX-4`,
