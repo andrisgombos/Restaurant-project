@@ -1,7 +1,11 @@
-export const menuCountAction = (count) =>{
-    return ({
-        type:"MENUCOUNTER",
-        payload: count
-    })
-}
-dispatch(menuCountAction)
+// import { useDispatch } from "react-redux";
+
+// const dispatch = useDispatch(); 
+
+// export const menuCountAction = (menuCount) =>{
+//     return ({
+//         type:"MENUCOUNTER",
+//         payload: menuCount
+//     })
+// }
+// dispatch(menuCountAction)
