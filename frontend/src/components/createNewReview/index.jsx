@@ -1,20 +1,31 @@
-import React, { useState } from "react";
-import Header from '../header';
-import Footer from '../footer';
+import React, { useState } from "react"
+import Header from '../header'
+import Footer from '../footer'
 import {
-    InputField, CreateRestaurantButton, CreateRestaurantHeader, NewRestaurantContainer, InputFieldsContainer,
-    InvisibleText, GreyText, SelectField,
+    InputField,
+    InputFieldContainer,
+    NewReviewContainer,
+    ReviewTitleImage,
+    SelectRating, SelectRatingContainer, StarImage,
+    SubmitReviewButton,
 } from './style'
+import AsianFood from "../../assets/pictures/asian_food.jpeg"
+import Star from "../../assets/icon/star.svg"
+
+
 
 
 const CreateNewReview = () => {
 
+    const [text_content, setText_content] = useState("");
+
     const newReviewHandler = (event) => {
         event.preventDefault();
-        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/";
+        // need restaurant id for url? how can this be automated? currently manual
+        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/create/restaurant/7/";
 
             let reviewDetails = {
-                // content: content,
+                text_content: text_content,
             }
 
             const config = {
@@ -34,7 +45,39 @@ const CreateNewReview = () => {
 
     return <>
         <Header/>
-
+        <ReviewTitleImage>
+            <img src={AsianFood} alt="unsername-titleimage"/>
+        </ReviewTitleImage>
+        <NewReviewContainer>
+            <InputFieldContainer>
+                <SelectRatingContainer>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <StarImage>
+                        <img src={Star} alt={"star rating"}/>
+                    </StarImage>
+                    <SelectRating>Select your rating</SelectRating>
+                </SelectRatingContainer>
+                <InputField
+                    name='text_content'
+                    type='text'
+                    required
+                    placeholder={"Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review or if you're connected in any way to the owner or employees."}
+                    // onfocus={"this.placeholder = ''"}
+                    value= {undefined} onChange={(e)=>setText_content(e.target.value)}/>
+                <SubmitReviewButton  type='submit' onClick={newReviewHandler}>Submit</SubmitReviewButton>
+            </InputFieldContainer>
+        </NewReviewContainer>
         <Footer/>
     </>
 }
