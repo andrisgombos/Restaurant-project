@@ -15,6 +15,23 @@ export const NewReviewContainer = styled.form`
     font-weight: bold;
 `
 
+export const ReviewTitleImage = styled.div`
+    height:300px;
+    width:100%;
+    display:flex;
+    background: rgba(0, 0, 0, 0.5);
+    img{
+        height:100%;
+        width:100%;
+    }
+`;
+
+
+export const InputFieldContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 
 export const InputField = styled.textarea`
     padding: 0.7em 1em;
@@ -30,7 +47,7 @@ export const InputField = styled.textarea`
 
 
 export const SubmitReviewButton = styled(OrangeButton)`
-    align-self: center;
+    align-self: flex-end;
     color: #F8F8FF;
     border: none;
     font-size: 1.5rem;

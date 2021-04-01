@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import Header from '../header';
-import Footer from '../footer';
-import { InputField, NewReviewContainer, SubmitReviewButton, } from './style'
+import React, { useState } from "react"
+import Header from '../header'
+import Footer from '../footer'
+import {InputField, InputFieldContainer, NewReviewContainer, ReviewTitleImage, SubmitReviewButton,} from './style'
+import AsianFood from "../../assets/pictures/asian_food.jpeg"
+
 
 
 const CreateNewReview = () => {
@@ -11,7 +13,7 @@ const CreateNewReview = () => {
     const newReviewHandler = (event) => {
         event.preventDefault();
         // need restaurant id for url? how can this be automated? currently manual
-        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/1/";
+        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/create/restaurant/1/";
 
             let reviewDetails = {
                 text_content: text_content,
@@ -34,7 +36,11 @@ const CreateNewReview = () => {
 
     return <>
         <Header/>
-            <NewReviewContainer>
+        <ReviewTitleImage>
+            <img src={AsianFood} alt="unsername-titleimage"/>
+        </ReviewTitleImage>
+        <NewReviewContainer>
+            <InputFieldContainer>
                 <InputField
                     name='text_content'
                     type='text'
@@ -42,7 +48,8 @@ const CreateNewReview = () => {
                     onfocus={"this.placeholder = ''"}
                     value= {undefined} onChange={(e)=>setText_content(e.target.value)}/>
                 <SubmitReviewButton  type='submit' onClick={newReviewHandler}>Submit</SubmitReviewButton>
-            </NewReviewContainer>
+            </InputFieldContainer>
+        </NewReviewContainer>
         <Footer/>
     </>
 }
