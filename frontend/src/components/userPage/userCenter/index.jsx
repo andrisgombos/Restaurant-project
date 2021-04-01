@@ -18,11 +18,10 @@ export default function CenterContainer() {
     return (
         <>
         <Container>
-        
             {menuCount === "0" ? <UserReviews /> : null }
             {menuCount === "1" ? <CommentByUser /> : null}
             {menuCount === "2" ? <UsersRestaurants /> : null}
-            {menuCount === "3" && token ? <EditProfile />: null }
+            {menuCount === "3" ? <EditProfile />: null }
         </Container>    
         </>
     )
