@@ -52,7 +52,7 @@ function EditProfile() {
             things_user_loves: things_user_loves,
             description: description
         }
-        const editUrl = "https://luna-taurus.propulsion-learn.ch/backend/api/userprofiles/me/";
+        const editUrl = ("https://luna-taurus.propulsion-learn.ch/backend/api/userprofiles/me/", config);
         const config = {
             method: "PATCH",
             body: JSON.stringify(newDetails),
