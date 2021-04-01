@@ -9,5 +9,5 @@ class RestaurantReviewUserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ['id', 'user']
+        fields = ['id', 'user', 'first_name', 'last_name', 'sent_reviews']
         read_only_fields = ['user']
