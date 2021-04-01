@@ -27,7 +27,6 @@ class MainRestaurantSerializer(serializers.ModelSerializer):
             average_rating = int(total) / len(reviews)
             return average_rating
 
-
     class Meta:
         model = Restaurant
         fields = ['id', 'name', 'categories', 'country', 'street', 'city', 'zip', 'website', 'phone', 'email', 'opening_hours', 'price_level', 'image', 'reviews', 'restaurant_owner', 'categories', 'average_rating']

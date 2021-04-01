@@ -42,6 +42,7 @@ class RestaurantsSearchView(ListAPIView):
             **city**
             **zip**
             '''
+    permission_classes = []
     queryset = Restaurant.objects.all()
     serializer_class = MainRestaurantSerializer
     permission_classes = []
@@ -57,6 +58,7 @@ class ReviewsSearchView(ListAPIView):
 
                 **text_content**
                 '''
+    permission_classes = []
     queryset = RestaurantReview.objects.all()
     serializer_class = MainRestaurantReviewSerializer
     search_fields = ['text_content']
