@@ -28,7 +28,8 @@ const Verification = () => {
             code: code,
             // location: location,
             password_repeat: password_repeat,
-            
+            first_name: first_name,
+            last_name: last_name    
         }
         const url = "https://luna-taurus.propulsion-learn.ch/backend/api/auth/registration/validation/";
         const config = {
@@ -39,7 +40,7 @@ const Verification = () => {
         fetch(url,config)
             .then(res => res.json())
             .then(data => {
-                console.log(data.access)
+                console.log(data)
             })
             history.push('/sign-in')
     }
