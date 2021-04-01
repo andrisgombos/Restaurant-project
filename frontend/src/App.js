@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Email from "./components/Authentication/email/index"
 import { Register } from "./components/Authentication/registration/index";
-//import Verification from "./components/Authentication/Verification";
+import Verification from "./components/Authentication/verification/index";
 import SignIn from "./components/Authentication/signin/index"
 import Home from "./components/home";
 import ProfilePage from './components/userPage';
@@ -18,6 +18,7 @@ const App = () => {
       <Switch>
         <Route exact path='/registration' component={Register}/>
         <Route exact path='/sucess' component={Email}/>
+        <Route exact path='/verification' component={Verification}/>
         <Route exact path='/sign-in' component={SignIn}/>
         <Route exact path='/home' component={Home}/>
         <Route exact path='/user' component={ProfilePage}/>
