@@ -95,7 +95,7 @@ const Header = () => {
         history.push('/sign-in')
     }
     const goTosignUp = () => {
-        history.push('/user-self')
+        history.push('/registration')
     }
 
 
@@ -108,8 +108,8 @@ const Header = () => {
                 <HeaderLink onClick={ goToHome }>Home</HeaderLink>
                 <HeaderLink>Search</HeaderLink>
                 <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
-                <ButtonSignUp onClick={goTologIn}>LOGIN</ButtonSignUp>
-                <ButtonSignIn onClick={goTosignUp}>SIGNUP</ButtonSignIn>
+                <ButtonSignUp onClick={goTosignUp}>LOGIN</ButtonSignUp>
+                <ButtonSignIn onClick={goTologIn}>SIGNUP</ButtonSignIn>
 
             </RightContainer>
         </HeaderContainer>
