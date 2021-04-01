@@ -1,4 +1,19 @@
 import styled from 'styled-components';
+import {ButtonSignIn, ButtonSignUp} from '../../header/index'
+
+export const LikeButton = styled(ButtonSignUp)`
+background-color: grey;
+width: 120px;
+height: 30px;
+color: white;
+`;
+
+export const CommentButton = styled(ButtonSignIn)`
+background-color: grey;
+width: 120px;
+height: 30px;
+color: white;
+`;
 
 export const BackgroundColor = styled.main`
 background-color: #f8f8f8;
@@ -55,13 +70,11 @@ export const TopContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+display: flex;
+width: 100%;
+justify-content: center;
 `;
 
-export const Button = styled.button`
-width: 250px;
-background-color: grey;
-padding: 15px;
-`;
 
 export const LatestCommentsContainer = styled.div`
 `;

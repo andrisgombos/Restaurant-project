@@ -43,7 +43,7 @@ cursor: pointer;
 }
 `;
 
-const ButtonSignIn  = styled(OrangeButton)`
+export const ButtonSignIn  = styled(OrangeButton)`
 background-color: #e47d32;
 width:100px;
 height: 40px;
@@ -60,7 +60,7 @@ border:none;
 }
 `;
 
-const ButtonSignUp  = styled(OrangeButton)`
+export const ButtonSignUp  = styled(OrangeButton)`
 background-color: #e47d32;
 width:100px;
 height: 40px;
