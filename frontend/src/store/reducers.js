@@ -30,10 +30,17 @@ const allUsersReducer = (state= initialState, action) => {
     return state
 }
 
+const getLoggedInUser = (state= initialState, action) => {
+    if(action.type === 'LOOGED_IN_USER'){
+        return {...state, userMe: action.payload}
+    }
+    return state
+}
 
 export const rootReducer = combineReducers({
     lunaReducer,
     allUsersReducer,
+    getLoggedInUser,
 });
 
 
