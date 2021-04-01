@@ -1,12 +1,10 @@
 import React  from 'react'
-// import {useSelector} from 'react-redux'
 import StarIcon from '../../../assets/icon/star.svg'
 import CommentIcom from '../../../assets/icon/comment.svg'
 import RestaurantIcon from '../../../assets/icon/restaurant.svg'
 import {  Card } from '../style'
 import UserFace from '../../../assets/pictures/userFace2.JPG'
 import {useDispatch} from 'react-redux';
-// import { menuCountAction } from '../../../store/actions/menu_counter'
 
 
 

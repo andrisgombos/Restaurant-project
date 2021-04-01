@@ -5,17 +5,34 @@ import RestaurantIcon from '../../../assets/icon/restaurant.svg'
 import EditIcon from '../../../assets/icon/edit.svg'
 import { Card } from '../style'
 import UserFace from '../../../assets/pictures/userFace2.JPG'
+import { useDispatch } from 'react-redux'
 
-export default function UserSelfMenuCard(props) {
+
+export default function UserSelfMenuCard() {
+    const dispatch = useDispatch();
+
+    const menuHandler = value => {
+        // debugger
+        dispatch({type:"MENUCOUNTER",payload: value})
+  };
+
     return (
         <>
             <Card>
                 <img src={UserFace} alt="User's face"/>
                 <div><p>UserName's Profile</p></div>
-                <button><img src={StarIcon} alt="reviews left by user"/><p>Reviews</p></button>
-                <button><img src={CommentIcom} alt="comments by user"/><p>Comments</p></button>
-                <button><img src={RestaurantIcon} alt="users favourite restaurants"/><p>Restaurants</p></button>
-                <button><img src={EditIcon} alt="Edit profile"/><p>Edit</p></button>
+                <button
+                    onClick={()=>menuHandler("0")}
+                ><img src={StarIcon} alt="reviews left by user"/><p>Reviews</p></button>
+                <button
+                    onClick={()=>menuHandler("1")}
+                ><img src={CommentIcom} alt="comments by user"/><p>Comments</p></button>
+                <button
+                    onClick={()=>menuHandler("2")}
+                ><img src={RestaurantIcon} alt="users favourite restaurants"/><p>Restaurants</p></button>
+                <button
+                    onClick={()=>menuHandler("3")}
+                ><img src={EditIcon} alt="Edit profile"/><p>Edit</p></button>
                 
             </Card>
         </>
