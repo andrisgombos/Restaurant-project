@@ -11,6 +11,7 @@ import Reviews from "./components/restaurants/reviews";
 import CreateNewRestaurant from "./components/createNewRestaurant";
 import CreateNewReview from "./components/createNewReview";
 // import {withAuth} from './components/HOC'
+import Users from "./components/restaurants/users";
 
 
 

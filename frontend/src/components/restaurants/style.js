@@ -16,7 +16,7 @@ background-color: white;
 border: 1px solid #e9e9e9;
 font-weight: bold;
 font-size: 16px;
-color: #f8f8f8;
+color: grey;
 `;
 
 export const CategoriesContainer = styled.div`

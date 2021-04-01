@@ -43,7 +43,7 @@ const Reviews = () => {
         }
         fetch(likeURL, config)
             .then(res=> res.json())
-            .then(res => setLikes(res))
+            .then(res => console.log("in setlikes", res))
             .catch(err => setErrors(err));
     }
 
