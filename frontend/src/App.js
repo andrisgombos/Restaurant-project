@@ -9,7 +9,7 @@ import MyProfilePage from "./components/userPage/userMePage";
 import Restaurants from "./components/restaurants/index"
 import Reviews from "./components/restaurants/reviews";
 import CreateNewRestaurant from "./components/createNewRestaurant";
-//import {withAuth} from './components/HOC'
+// import {withAuth} from './components/HOC'
 
 const App = () => {
   return <>
@@ -27,7 +27,7 @@ const App = () => {
         <Route exact path='/create-new-restaurant' component={CreateNewRestaurant}/>
 
 
-        {/*<Route exact path='/user-self' component={withAuth(MyProfilePage)}/>*/}
+        {/* <Route exact path='/user-self' component={withAuth(MyProfilePage)}/> */}
       </Switch>
     </Router>
 

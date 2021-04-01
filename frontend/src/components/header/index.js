@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Route, Switch, Link,useHistory } from 'react-router-dom'
+import { Route, Switch, Link,useHistory } from 'react-router-dom'
 
 import styled from 'styled-components';
 import lunaLogo from '../../assets/icon/logo.svg'
@@ -81,6 +81,13 @@ font-size:16px;
 
 const Header = () => {
 
+    const history = useHistory()
+
+    const goToProfile = () => {
+        history.push('/user-self')
+    
+    }
+
     return (
         <>
         <HeaderContainer>
@@ -88,7 +95,7 @@ const Header = () => {
             <RightContainer>
                 <HeaderLink>Home</HeaderLink>
                 <HeaderLink>Search</HeaderLink>
-                <HeaderLink>Profile</HeaderLink>
+                <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
                 <ButtonSignUp>LOGIN</ButtonSignUp>
                 <ButtonSignIn>SIGNUP</ButtonSignIn>
 

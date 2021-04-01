@@ -1,4 +1,4 @@
-import React , from 'react'
+import React ,{useSelector} from 'react'
 import CommentByUser from './commentsByUser'
 // import EditProfile from './editUser'
 import UserReviews from './reviewsByUser'
