@@ -9,7 +9,6 @@ import {
 
 const CreateNewRestaurant = () => {
 
-    // add all of these to initial state?
     const [name, setName] = useState("");
     const [country, setCountry] = useState("");
     const [street, setStreet] = useState("");
@@ -32,31 +31,17 @@ const CreateNewRestaurant = () => {
         let formData = new FormData();
         formData.append('name', name)
         formData.append('country', country)
-        formData.append('street', 'street')
-        formData.append('category', 'category')
-        formData.append('city', 'city')
-        formData.append('zip', 'zip')
-        formData.append('website', 'website')
-        formData.append('phone', 'phone')
-        formData.append('opening_hours', 'opening_hours')
-        formData.append('image', 'image')
-        formData.append('price_level', 'price_level')
-        formData.append('email', 'email')
+        formData.append('street', street)
+        formData.append('category', category)
+        formData.append('city', city)
+        formData.append('zip', zip)
+        formData.append('website', website)
+        formData.append('phone', phone)
+        formData.append('opening_hours', opening_hours)
+        formData.append('image', image)
+        formData.append('price_level', price_level)
+        formData.append('email', email)
 
-        // let restaurantDetails = {
-        //     name: name,
-        //     country: country,
-        //     street: street,
-        //     category: category,
-        //     city: city,
-        //     zip: zip,
-        //     website: website,
-        //     phone: phone,
-        //     opening_hours: opening_hours,
-        //     image: image,
-        //     price_level: price_level,
-        //     email: email,
-        // }
 
         const config = {
             method: "POST",
@@ -98,7 +83,6 @@ const CreateNewRestaurant = () => {
                     <div>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Category *</GreyText>
-                        {/*<InputField name='category' type='dropdown' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCategory(e.target.value)}/>*/}
                         <SelectField name='category' onChange={(e)=>setCategory(e.target.value)}>
                             <option value="Select a category...">Select a category...</option>
                             <option value="BBQ">BBQ</option>
@@ -116,18 +100,16 @@ const CreateNewRestaurant = () => {
                         <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Price level</GreyText>
-                        {/*<InputField name='price' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}/>*/}
-                         <SelectField name='price_level' onChange={(e)=>setPrice_level(e.target.value)}>
-                             <option value="Select a price level...">Select a category...</option>
+                         <SelectField name='price_level' type='text' onChange={(e)=>setPrice_level(e.target.value)}>
+                             <option value="Select a price level...">Select a price level...</option>
                              <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                             <option value="2">2</option>
+                             <option value="3">3</option>
                           </SelectField>
                     </div>
                     <div>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Country *</GreyText>
-                        {/*<InputField name='country' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}/>*/}
                         <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
                             <option value="Select a country...">Select a country...</option>
                             <option value="Austria">Austria</option>
@@ -143,7 +125,6 @@ const CreateNewRestaurant = () => {
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Image</GreyText>
                         <InputField name='image' type='file' value= {undefined} onChange={(e)=>setImage(e.target.files[0])}/>
-                        {/*<FileUploader />*/}
                     </div>
                 </InputFieldsContainer>
                 <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>Create Restaurant</CreateRestaurantButton>
