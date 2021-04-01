@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import Header from '../header';
 import Footer from '../footer';
-import {
-    InputField, CreateRestaurantButton, CreateRestaurantHeader, NewRestaurantContainer, InputFieldsContainer,
-    InvisibleText, GreyText, SelectField,
-} from './style'
+import { InputField, NewReviewContainer, SubmitReviewButton, } from './style'
 
 
 const CreateNewReview = () => {
 
+    const [text_content, setText_content] = useState("");
+
     const newReviewHandler = (event) => {
         event.preventDefault();
-        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/";
+        // need restaurant id for url? how can this be automated? currently manual
+        const url = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/1/";
 
             let reviewDetails = {
-                // content: content,
+                text_content: text_content,
             }
 
             const config = {
@@ -34,7 +34,15 @@ const CreateNewReview = () => {
 
     return <>
         <Header/>
-
+            <NewReviewContainer>
+                <InputField
+                    name='text_content'
+                    type='text'
+                    placeholder={"Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review or if you're connected in any way to the owner or employees."}
+                    onfocus={"this.placeholder = ''"}
+                    value= {undefined} onChange={(e)=>setText_content(e.target.value)}/>
+                <SubmitReviewButton  type='submit' onClick={newReviewHandler}>Submit</SubmitReviewButton>
+            </NewReviewContainer>
         <Footer/>
     </>
 }
