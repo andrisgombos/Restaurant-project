@@ -10,7 +10,27 @@ import {connect} from 'react-redux';
 
 function EditProfile() {
 
+    const token = localStorage.getItem('token');
 
+
+
+    //===== Delete handler=============================================
+
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        const credentials = {
+          token: token
+        }
+        dispatch(signInAction(credentials, history))
+  };
+
+
+
+
+
+    //===================================================================
+
+    // edit handler======================================================
     const [username, setUsername] = useState("")
     const [first_name, setFirst_name] = useState("")
     const [last_name,setLast_name] = useState("")
@@ -20,12 +40,6 @@ function EditProfile() {
     const [things_user_loves, setThings_user_loves]=useState([ ]);
     const [description, setdescription]=useState("")
     
-
-    const token = localStorage.getItem('token');
-
-
-
-
     const editProfileHandler = (e) => {
         e.preventDefault();
         const newDetails = {
@@ -38,7 +52,7 @@ function EditProfile() {
             things_user_loves: things_user_loves,
             description: description
         }
-        const editUrl = undefined;
+        const editUrl = "https://luna-taurus.propulsion-learn.ch/backend/api/userprofiles/me/";
         const config = {
             method: "PATCH",
             body: JSON.stringify(newDetails),
@@ -54,7 +68,7 @@ function EditProfile() {
             });
         };
         
-        
+     //========================================================================   
         
 
         return (

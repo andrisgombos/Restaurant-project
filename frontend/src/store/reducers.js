@@ -4,6 +4,7 @@ const initialState = {
     token: '',
     email: '',
     count:"",
+    userMe:[],
 }
 
 const lunaReducer = (state = initialState, action) => {
