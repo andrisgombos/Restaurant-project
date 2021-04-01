@@ -29,7 +29,7 @@ class Restaurant(models.Model):
     # Set zip
     zip = models.CharField(max_length=5)
     # Set website
-    website = models.URLField(max_length=250)
+    website = models.CharField(max_length=250)
     # Set phone
     phone = models.CharField(max_length=15)
     # Set email
