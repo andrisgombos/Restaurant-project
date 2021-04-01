@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
 width: 100%;
-position: sticky;
+position: absolute;
 bottom: 0;
 background-color: white;
 `;
