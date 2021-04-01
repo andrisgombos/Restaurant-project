@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {BackgroundColor, ReviewCard, UserInfoContainer, UserImage, UserInfo, UserReviewsAmount, UserInfoTextContainer, RestaurantInfo, TopContainer, Button, LatestComments, LatestCommentsContainer, CommentName, Comment, ButtonContainer, LikeButton, CommentButton} from './style'
 import { RestaurantGridContainer } from '../restaurant/style';
-import {ButtonSignIn, ButtonSignUp} from '../../header/index'
+// import {ButtonSignIn, ButtonSignUp} from '../../header/index'
 import Header from '../../header';
 import Footer from '../../footer';
 import {Mainsection} from '../../../globalStyle/globalStyle'

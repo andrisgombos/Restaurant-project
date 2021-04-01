@@ -18,7 +18,6 @@ const lunaReducer = (state = initialState, action) => {
             return newState;
         default:
             return state;
-        
     }
 }
 

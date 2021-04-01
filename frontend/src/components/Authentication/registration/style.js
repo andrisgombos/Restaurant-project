@@ -36,8 +36,16 @@ align-self: center;
 border-radius: 100px;
 color: #F8F8FF;
 border: none;
-background-color: orange;
+background-color: #E47D31;
 font-size: 1.5rem;
 padding: 1em 1.5em;
 margin-top: 3em;
-`
+
+:focus{
+    outline:transparent;
+}
+:hover{
+    font-weight:bolder;
+}
+`;
+
