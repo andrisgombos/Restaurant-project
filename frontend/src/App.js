@@ -9,8 +9,14 @@ import MyProfilePage from "./components/userPage/userMePage";
 import Restaurants from "./components/restaurants/index"
 import Reviews from "./components/restaurants/reviews";
 import CreateNewRestaurant from "./components/createNewRestaurant";
-import Users from "./components/restaurants/users";
+import CreateNewReview from "./components/createNewReview";
 // import {withAuth} from './components/HOC'
+
+
+
+
+
+
 
 const App = () => {
   return <>
@@ -29,6 +35,11 @@ const App = () => {
         <Route exact path='/reviews' component={Reviews}/>
         <Route exact path='/users' component={Users}/>
         <Route exact path='/create-new-restaurant' component={CreateNewRestaurant}/>
+        <Route exact path='/create-new-review' component={CreateNewReview}/>
+
+
+
+
 
 
         {/* <Route exact path='/user-self' component={withAuth(MyProfilePage)}/> */}

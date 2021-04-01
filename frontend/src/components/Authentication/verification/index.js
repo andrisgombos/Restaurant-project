@@ -4,9 +4,11 @@ import { RegisterMsg, Inputfield } from "../registration/style"
 import { VerificationCont, InputHolder, RegButton } from "./style"
 import { Link } from 'react-router-dom';
 import React,{useState} from 'react';
+import { useHistory } from "react-router-dom";
 
 const Verification = () => {
 
+    const history = useHistory()
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -36,7 +38,10 @@ const Verification = () => {
         }
         fetch(url,config)
             .then(res => res.json())
-            .then()
+            .then(data => {
+                console.log(data.access)
+            })
+            history.push('/sign-in')
     }
 
     return  <>

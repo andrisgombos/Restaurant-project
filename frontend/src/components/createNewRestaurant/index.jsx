@@ -77,78 +77,78 @@ const CreateNewRestaurant = () => {
 
 
     return <>
-                <Header/>
-                    <NewRestaurantContainer>
-                        <CreateRestaurantHeader>Create New Restaurant</CreateRestaurantHeader>
-                        <InputFieldsContainer>
-                            <div>
-                                <text>Basic</text>
-                                <GreyText>Name *</GreyText>
-                                <InputField name='name' type='text' value= {undefined} onChange={(e)=>setName(e.target.value)}/>
-                                <text>Address</text>
-                                <GreyText>Street *</GreyText>
-                                <InputField name='street' type='text' value= {undefined} onChange={(e)=>setStreet(e.target.value)}/>
-                                <text>Contact</text>
-                                <GreyText>Website</GreyText>
-                                <InputField name='website' type='text' value= {undefined} onChange={(e)=>setWebsite(e.target.value)}/>
-                                <text>Details</text>
-                                <GreyText>Opening hours *</GreyText>
-                                <InputField name='opening hours' type='text' value= {undefined} onChange={(e)=>setOpening_hours(e.target.value)}/>
-                            </div>
-                            <div>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Category *</GreyText>
-                                {/*<InputField name='category' type='dropdown' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCategory(e.target.value)}/>*/}
-                                <SelectField name='category' onChange={(e)=>setCategory(e.target.value)}>
-                                    <option value="Select a category...">Select a category...</option>
-                                    <option value="BBQ">BBQ</option>
-                                    <option value="Chinese">Chinese</option>
-                                    <option value="Fast Food">Fast Food</option>
-                                    <option value="Swiss">Swiss</option>
-                                    <option value="Vegetarian">Vegetarian</option>
-                                    <option value="Vegan">Vegan</option>
-                                  </SelectField>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>City *</GreyText>
-                                <InputField name='city' type='text' value= {undefined} onChange={(e)=>setCity(e.target.value)}/>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Phone *</GreyText>
-                                <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Price level</GreyText>
-                                {/*<InputField name='price' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}/>*/}
-                                 <SelectField name='price_level' onChange={(e)=>setPrice_level(e.target.value)}>
-                                     <option value="Select a price level...">Select a category...</option>
-                                     <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                  </SelectField>
-                            </div>
-                            <div>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Country *</GreyText>
-                                {/*<InputField name='country' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}/>*/}
-                                <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
-                                    <option value="Select a country...">Select a country...</option>
-                                    <option value="Austria">Austria</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Switzerland">Switzerland</option>
-                                  </SelectField>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Zip</GreyText>
-                                <InputField name='zip' type='text' value= {undefined} onChange={(e)=>setZip(e.target.value)}/>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Email</GreyText>
-                                <InputField name='email' type='text' value= {undefined} onChange={(e)=>setEmail(e.target.value)}/>
-                                <InvisibleText>.</InvisibleText>
-                                <GreyText>Image</GreyText>
-                                <InputField name='image' type='file' value= {undefined} onChange={(e)=>setImage(e.target.files[0])}/>
-                                {/*<FileUploader />*/}
-                            </div>
-                        </InputFieldsContainer>
-                        <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>Create Restaurant</CreateRestaurantButton>
-                    </NewRestaurantContainer>
-                <Footer/>
+        <Header/>
+            <NewRestaurantContainer>
+                <CreateRestaurantHeader>Create New Restaurant</CreateRestaurantHeader>
+                <InputFieldsContainer>
+                    <div>
+                        <text>Basic</text>
+                        <GreyText>Name *</GreyText>
+                        <InputField name='name' type='text' value= {undefined} onChange={(e)=>setName(e.target.value)}/>
+                        <text>Address</text>
+                        <GreyText>Street *</GreyText>
+                        <InputField name='street' type='text' value= {undefined} onChange={(e)=>setStreet(e.target.value)}/>
+                        <text>Contact</text>
+                        <GreyText>Website</GreyText>
+                        <InputField name='website' type='text' value= {undefined} onChange={(e)=>setWebsite(e.target.value)}/>
+                        <text>Details</text>
+                        <GreyText>Opening hours *</GreyText>
+                        <InputField name='opening hours' type='text' value= {undefined} onChange={(e)=>setOpening_hours(e.target.value)}/>
+                    </div>
+                    <div>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Category *</GreyText>
+                        {/*<InputField name='category' type='dropdown' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCategory(e.target.value)}/>*/}
+                        <SelectField name='category' onChange={(e)=>setCategory(e.target.value)}>
+                            <option value="Select a category...">Select a category...</option>
+                            <option value="BBQ">BBQ</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Fast Food">Fast Food</option>
+                            <option value="Swiss">Swiss</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                          </SelectField>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>City *</GreyText>
+                        <InputField name='city' type='text' value= {undefined} onChange={(e)=>setCity(e.target.value)}/>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Phone *</GreyText>
+                        <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Price level</GreyText>
+                        {/*<InputField name='price' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}/>*/}
+                         <SelectField name='price_level' onChange={(e)=>setPrice_level(e.target.value)}>
+                             <option value="Select a price level...">Select a category...</option>
+                             <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                          </SelectField>
+                    </div>
+                    <div>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Country *</GreyText>
+                        {/*<InputField name='country' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}/>*/}
+                        <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
+                            <option value="Select a country...">Select a country...</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Switzerland">Switzerland</option>
+                          </SelectField>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Zip</GreyText>
+                        <InputField name='zip' type='text' value= {undefined} onChange={(e)=>setZip(e.target.value)}/>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Email</GreyText>
+                        <InputField name='email' type='text' value= {undefined} onChange={(e)=>setEmail(e.target.value)}/>
+                        <InvisibleText>.</InvisibleText>
+                        <GreyText>Image</GreyText>
+                        <InputField name='image' type='file' value= {undefined} onChange={(e)=>setImage(e.target.files[0])}/>
+                        {/*<FileUploader />*/}
+                    </div>
+                </InputFieldsContainer>
+                <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>Create Restaurant</CreateRestaurantButton>
+            </NewRestaurantContainer>
+        <Footer/>
     </>
 }
 

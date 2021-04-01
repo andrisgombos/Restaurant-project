@@ -1,7 +1,7 @@
-const menuCountAction = (count) =>{
+export const menuCountAction = (count) =>{
     return ({
         type:"MENUCOUNTER",
         payload: count
     })
 }
-export default menuCountAction
+dispatch(menuCountAction)

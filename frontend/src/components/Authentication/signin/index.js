@@ -5,10 +5,12 @@ import React, { useState } from 'react'
 import { SignInCont } from "./style"
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 
 const SignIn = () => {
 
+    let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -30,6 +32,7 @@ const SignIn = () => {
             console.log(data);
             // dispatch + move to homepage
             localStorage.setItem('token', data.access);
+            history.push('/home');
         })
     }
 
