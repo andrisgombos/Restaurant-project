@@ -2,9 +2,9 @@ import Footer from "../../footer";
 import Header from "../../header";
 import React, {useState} from 'react';
 import { RegisterCont, RegisterMsg, Inputfield, Button} from "./style"
-import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import registerAction from "../../../store/actions/registerAction"
 
 export const Register = () => {
 
@@ -31,7 +31,8 @@ export const Register = () => {
         .then(data => {
             console.log(data);
         })
-        history.push("/sucess");
+        dispatch(registerAction(credentials))
+        history.push("/sucess")
     }
 
     return  <>
