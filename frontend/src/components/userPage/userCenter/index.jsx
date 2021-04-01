@@ -1,33 +1,24 @@
-import React ,{useSelector} from 'react'
+import React  from 'react'
+import {useSelector} from 'react-redux'
 import CommentByUser from './commentsByUser'
-// import EditProfile from './editUser'
 import UserReviews from './reviewsByUser'
 import { Container } from './style'
 import UsersRestaurants from './usersRestaurants'
 
 
 
-
-
-
-
-
 export default function CenterContainer() {
 
     
-        
-    
-       
-
-
+     const menuCount = useSelector(state => state.menuCount.pageId);
 
     return (
         <>
         <Container>
-        {/* depending on which user card button is clicked, render a component here --> change profile, view Reviews,comments restaurants*/}
-            {/* {count === 0 ? <UserReviews /> : null }
-            {count === 1 ? <CommentByUser /> : null}
-            {count === 2 ? <UsersRestaurants /> : null} */}
+        
+            {menuCount === "0" ? <UserReviews /> : null }
+            {menuCount === "1" ? <CommentByUser /> : null}
+            {menuCount === "2" ? <UsersRestaurants /> : null}
         </Container>    
         </>
     )
