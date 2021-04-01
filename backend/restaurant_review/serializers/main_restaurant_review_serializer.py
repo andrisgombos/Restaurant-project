@@ -16,6 +16,5 @@ class MainRestaurantReviewSerializer(serializers.ModelSerializer):
         model = RestaurantReview
         fields = ['id', 'text_content', 'rating', 'date_created', 'date_modified', 'liked_by', 'user_profile', 'restaurant', 'comments']
         read_only_fields = ['liked_by', 'restaurant', 'user_profile', 'comments', 'user_profile']
-        fields = ['id', 'text_content', 'rating', 'date_created', 'date_modified', 'liked_by', 'restaurant',
-                  'user_profile', 'comments']
+        fields = ['id', 'text_content', 'rating', 'date_created', 'date_modified', 'liked_by', 'restaurant', 'user_profile', 'comments']
         read_only_fields = ['liked_by', 'restaurant', 'user_profile', 'comments']

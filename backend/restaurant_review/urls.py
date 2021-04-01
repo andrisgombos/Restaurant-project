@@ -2,9 +2,10 @@ from django.urls import path
 
 from restaurant_review.views import CreateRestaurantReviewView, GetRestaurantReviewsOfRestaurantView, \
     GetRestaurantReviewsOfUserProfileView, RetrieveUpdateDeleteRestaurantReviewView, ToggleLikeRestaurantReviewView, \
-    ShowLikedRestaurantReviewsView, ShowCommentedRestaurantReviewsView
+    ShowLikedRestaurantReviewsView, ShowCommentedRestaurantReviewsView, GetAllReviewsView
 
 urlpatterns = [
+    path('', GetAllReviewsView.as_view()),
     path('create/restaurant/<int:pk>/', CreateRestaurantReviewView.as_view()),
     path('restaurant/<int:pk>/', GetRestaurantReviewsOfRestaurantView.as_view()),
     path('userprofile/<int:pk>/', GetRestaurantReviewsOfUserProfileView.as_view()),

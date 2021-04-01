@@ -9,6 +9,11 @@ from restaurant_review.models import RestaurantReview
 from restaurant_review.serializers.main_restaurant_review_serializer import MainRestaurantReviewSerializer
 
 
+class GetAllReviewsView(ListAPIView):
+    queryset = RestaurantReview.objects.all()
+    serializer_class = MainRestaurantReviewSerializer
+
+
 class CreateRestaurantReviewView(CreateAPIView):
     '''
                 # Create a new review on a specified restaurant
