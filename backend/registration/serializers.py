@@ -41,7 +41,8 @@ class RegistrationSerializer(serializers.Serializer):
         #  send email
         send_mail(
             'Your Luna registration code',
-            f'Here is your registration code: {registration.code}',
+            f'Here is your registration code: {registration.code} \n'
+            f'Go to this link to complete you registration https://luna-taurus.propulsion-learn.ch/verification',
             'tencindin@gmail.com',
             [f'{new_user.email}'],
             fail_silently=False,

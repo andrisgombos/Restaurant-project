@@ -3,7 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 import {
     InputField, CreateRestaurantButton, CreateRestaurantHeader, NewRestaurantContainer, InputFieldsContainer,
-    InvisibleText, GreyText,
+    InvisibleText, GreyText, SelectField,
 } from './style'
 
 
@@ -30,8 +30,8 @@ const CreateNewRestaurant = () => {
         const url = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/";
 
         let formData = new FormData();
-        formData.append('name', 'name')
-        formData.append('country', 'country')
+        formData.append('name', name)
+        formData.append('country', country)
         formData.append('street', 'street')
         formData.append('category', 'category')
         formData.append('city', 'city')
@@ -43,28 +43,30 @@ const CreateNewRestaurant = () => {
         formData.append('price_level', 'price_level')
         formData.append('email', 'email')
 
-        let restaurantDetails = {
-            name: name,
-            country: country,
-            street: street,
-            category: category,
-            city: city,
-            zip: zip,
-            website: website,
-            phone: phone,
-            opening_hours: opening_hours,
-            image: image,
-            price_level: price_level,
-            email: email,
-        }
+        // let restaurantDetails = {
+        //     name: name,
+        //     country: country,
+        //     street: street,
+        //     category: category,
+        //     city: city,
+        //     zip: zip,
+        //     website: website,
+        //     phone: phone,
+        //     opening_hours: opening_hours,
+        //     image: image,
+        //     price_level: price_level,
+        //     email: email,
+        // }
 
         const config = {
             method: "POST",
-            body: JSON.stringify(restaurantDetails),
+            // body: JSON.stringify(restaurantDetails),
+            body: formData,
+
             headers: new Headers ({
                 // "Authorization": `Bearer ${token}`,
                 "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg4NDA4LCJqdGkiOiIyMDI0M2RlNDk2MjE0N2I5YjFjNjU2MTdhNDg5MDNiMiIsInVzZXJfaWQiOjF9.s2BCrO0ezAl3j77MH8BNTvXwdxgDfgtVLOmY4n8wX-4`,
-                "Content-Type": "application/json"
+                // "Content-Type": "application/json"
                 // "Content-Type": "FormData"
             })
         }
@@ -96,7 +98,16 @@ const CreateNewRestaurant = () => {
                             <div>
                                 <InvisibleText>.</InvisibleText>
                                 <GreyText>Category *</GreyText>
-                                <InputField name='category' type='dropdown' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCategory(e.target.value)}/>
+                                {/*<InputField name='category' type='dropdown' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCategory(e.target.value)}/>*/}
+                                <SelectField name='category' onChange={(e)=>setCategory(e.target.value)}>
+                                    <option value="Select a category...">Select a category...</option>
+                                    <option value="BBQ">BBQ</option>
+                                    <option value="Chinese">Chinese</option>
+                                    <option value="Fast Food">Fast Food</option>
+                                    <option value="Swiss">Swiss</option>
+                                    <option value="Vegetarian">Vegetarian</option>
+                                    <option value="Vegan">Vegan</option>
+                                  </SelectField>
                                 <InvisibleText>.</InvisibleText>
                                 <GreyText>City *</GreyText>
                                 <InputField name='city' type='text' value= {undefined} onChange={(e)=>setCity(e.target.value)}/>
@@ -105,12 +116,24 @@ const CreateNewRestaurant = () => {
                                 <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
                                 <InvisibleText>.</InvisibleText>
                                 <GreyText>Price level</GreyText>
-                                <InputField name='price' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}/>
+                                {/*<InputField name='price' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}/>*/}
+                                 <SelectField name='price_level' onChange={(e)=>setPrice_level(e.target.value)}>
+                                     <option value="Select a price level...">Select a category...</option>
+                                     <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                  </SelectField>
                             </div>
                             <div>
                                 <InvisibleText>.</InvisibleText>
                                 <GreyText>Country *</GreyText>
-                                <InputField name='country' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}/>
+                                {/*<InputField name='country' type='text' placeholder='Select a value...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}/>*/}
+                                <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
+                                    <option value="Select a country...">Select a country...</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                  </SelectField>
                                 <InvisibleText>.</InvisibleText>
                                 <GreyText>Zip</GreyText>
                                 <InputField name='zip' type='text' value= {undefined} onChange={(e)=>setZip(e.target.value)}/>
@@ -130,45 +153,3 @@ const CreateNewRestaurant = () => {
 }
 
 export default CreateNewRestaurant;
-
-
-
-
-
-
-// import styled from 'styled-components';
-//
-//
-//
-//
-// const Button = styled.button;
-//
-// const FileUploader = props => {
-//   const hiddenFileInput = React.useRef(null);
-//
-//   const handleClick = event => {
-//     hiddenFileInput.current.click();
-//   };  // Call a function (passed as a prop from the parent component)
-//   // to handle the user-selected file
-//
-//
-//
-//   const handleChange = event => {
-//     const fileUploaded = event.target.files[0];
-//     props.handleFile(fileUploaded);
-//   };
-//
-//     return (
-//         <>
-//         <Button onClick={handleClick}>
-//             Upload a file
-//         </Button>
-//         <input
-//             type="file"
-//             ref={hiddenFileInput}
-//             onChange={handleChange}
-//             style={{display: 'none'}}
-//         />
-//         </>
-//     );
-// };

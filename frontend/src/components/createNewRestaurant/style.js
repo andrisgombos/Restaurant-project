@@ -56,6 +56,18 @@ export const InputField = styled.input`
 `
 
 
+export const SelectField = styled.select`
+    padding: 0.7em 1em;
+    width: 20em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    font-size: 1.5rem;
+    font-weight: normal;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 5px;
+`
+
+
 export const CreateRestaurantHeader = styled.h1`
     color: #4C4C4C;
     font-size: 2.5rem;
