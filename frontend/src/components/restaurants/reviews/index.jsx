@@ -18,7 +18,7 @@ const Reviews = () => {
     }, []);
 
     const fetchUser = () => {
-        const usersURL = "https://luna-taurus.propulsion-learn.ch/backend/api/userprofiles/";
+        const usersURL = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/";
         const config = {
             method: "GET",
             headers: new Headers({
@@ -59,16 +59,16 @@ const Reviews = () => {
                         <UserInfoContainer>
                             <UserImage src={user.profile_picture}/>
                             <UserInfoTextContainer>
-                                <UserInfo>{user.first_name} {user.last_name}</UserInfo>
-                                {user.sent_reviews.length === 1
-                                ? <UserReviewsAmount>{user.sent_reviews.length} Review</UserReviewsAmount>
-                                : <UserReviewsAmount>{user.sent_reviews.length} Reviews</UserReviewsAmount>
+                                <UserInfo>{user.user_profile.first_name} {user.user_profile.last_name}</UserInfo>
+                                {user.user_profile.sent_reviews.length === 1
+                                ? <UserReviewsAmount>{user.user_profile.sent_reviews.length} Review</UserReviewsAmount>
+                                : <UserReviewsAmount>{user.user_profile.sent_reviews.length} Reviews</UserReviewsAmount>
                             }
                             </UserInfoTextContainer>
                         </UserInfoContainer>
                             <TopContainer>
-                                <RestaurantInfo>XY Bar</RestaurantInfo>
-                                <UserReviewsAmount>This is a review</UserReviewsAmount>
+                                <RestaurantInfo>{user.restaurant.name}</RestaurantInfo>
+                                <UserReviewsAmount>{user.text_content}</UserReviewsAmount>
                             </TopContainer>
                             <ButtonContainer>
                             {likes.map ((like) => 
@@ -84,7 +84,7 @@ const Reviews = () => {
                             <LatestCommentsContainer>
                                 <LatestComments>Latest Comments</LatestComments>
                                 <CommentName>My Name</CommentName>
-                                <Comment>Lorem ipsum dolor sit amet this is a placeholder halle hallo</Comment>
+                                <Comment>{user.comment}</Comment>
                                 <CommentName>My Name</CommentName>
                                 <Comment>Lorem ipsum dolor sit amet this is a placeholder halle hallo</Comment>
                             </LatestCommentsContainer>

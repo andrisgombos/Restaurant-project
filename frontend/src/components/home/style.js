@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {OrangeButton} from "../../globalStyle/globalStyle";
+
 
 export const BackgroundColor = styled.main`
 background-color: #f8f8f8;
@@ -20,7 +22,9 @@ object-fit: cover;
 
 export const SearchBarContainer = styled.div`
 position: absolute;
-width: 40vw;
+width: 50vw;
+display: flex;
+align-items: center;
 `;
 
 export const InputField = styled.input`
@@ -31,13 +35,8 @@ background-color: white;
 border-radius: 5px;
 `;
 
-export const ButtonPlaceholder = styled.button`
-background-color: #e47d32;
-height: 20px;
-width: 100px;
-margin: 20px;
-border:none;
-color: white;
+export const SearchButton = styled(OrangeButton)`
+margin-left: 20px;
 `;
 
 export const HeadlineContainer = styled.div`
@@ -49,7 +48,8 @@ export const RestaurantHeadline = styled.p`
 font-size: 1.5rem;
 text-transform: uppercase;
 text-align: center;
-padding: 15px;
+padding: 25px 25px 15px 25px;
+margin-bottom: 10px;
 border-bottom: 2px solid #e47d32;
 color: #4c4c4c;
 `;
