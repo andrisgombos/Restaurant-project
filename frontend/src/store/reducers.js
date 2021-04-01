@@ -37,10 +37,18 @@ const getLoggedInUser = (state= initialState, action) => {
     return state
 }
 
+const deleteUserAction = (state= initialState, action) => {
+    if(action.type === 'DELETE_USER'){
+        return {...state, userMe: action.payload}
+    }
+    return state
+}
+
 export const rootReducer = combineReducers({
     lunaReducer,
     allUsersReducer,
     getLoggedInUser,
+    deleteUserAction,
 });
 
 
