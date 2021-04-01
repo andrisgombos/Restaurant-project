@@ -9,10 +9,12 @@ import {Mainsection} from '../../../globalStyle/globalStyle'
 const Reviews = () => {
     
     const [users, setUsers] = useState([]);
+    const [likes, setLikes] = useState([]);
     const [errors, setErrors] = useState(false);
 
     useEffect(() => {
-        fetchUser();    
+        fetchUser();
+        toggleLike();  
     }, []);
 
     const fetchUser = () => {
@@ -30,6 +32,21 @@ const Reviews = () => {
             .catch(err => setErrors(err));
     }
 
+    const toggleLike = (id) => {
+        const likeURL = `https://luna-taurus.propulsion-learn.ch/backend/api/reviews/like/${id}/`;
+        const config = {
+            method: "PATCH",
+            headers: new Headers({
+                "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg3MDA1LCJqdGkiOiI0ZDFlZmM4MGFlMjc0MzZmYjkyMjcxYjAwMTIzMGE0NyIsInVzZXJfaWQiOjF9.Wmz8rmox2nvDrFC4zBzAU_X_iEC-t7LbuCzak0D3nTE`,
+                "Content-Type": "application/json"
+            })
+        }
+        fetch(likeURL, config)
+            .then(res=> res.json())
+            .then(res => setLikes(res))
+            .catch(err => setErrors(err));
+    }
+
     console.log(users);
 
     return (
@@ -43,16 +60,26 @@ const Reviews = () => {
                             <UserImage src={user.profile_picture}/>
                             <UserInfoTextContainer>
                                 <UserInfo>{user.first_name} {user.last_name}</UserInfo>
-                                <UserReviewsAmount>{user.sent_reviews.length} Reviews</UserReviewsAmount>
+                                {user.sent_reviews.length === 1
+                                ? <UserReviewsAmount>{user.sent_reviews.length} Review</UserReviewsAmount>
+                                : <UserReviewsAmount>{user.sent_reviews.length} Reviews</UserReviewsAmount>
+                            }
                             </UserInfoTextContainer>
                         </UserInfoContainer>
                             <TopContainer>
                                 <RestaurantInfo>XY Bar</RestaurantInfo>
-                                <UserReviewsAmount>This is a comment</UserReviewsAmount>
+                                <UserReviewsAmount>This is a review</UserReviewsAmount>
                             </TopContainer>
                             <ButtonContainer>
-                                <LikeButton>Like </LikeButton>
+                            {likes.map ((like) => 
+                                {(like.liked_by)
+                                    
+                                ? <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like</LikeButton>
+                                : <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like 1</LikeButton>
+                            }
+                            )};
                                 <CommentButton>Comment</CommentButton>
+
                             </ButtonContainer>
                             <LatestCommentsContainer>
                                 <LatestComments>Latest Comments</LatestComments>
@@ -63,7 +90,6 @@ const Reviews = () => {
                             </LatestCommentsContainer>
                     </ReviewCard>
                 )};
-                    
                 </RestaurantGridContainer>
             </Mainsection>
             <Footer/>
