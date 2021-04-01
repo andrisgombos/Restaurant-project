@@ -26,6 +26,18 @@ export const ReviewTitleImage = styled.div`
 `;
 
 
+export const RestaurantName = styled.p`
+padding: 10px 13px;
+`;
+
+
+export const RestaurantImage = styled.img`
+width: 270px;
+height: 270px;
+object-fit: cover;
+`;
+
+
 export const InputFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
