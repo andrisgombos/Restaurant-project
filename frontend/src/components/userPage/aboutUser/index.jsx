@@ -1,20 +1,27 @@
 import React from 'react'
 import {AboutUserContainer, InfoField} from './style'
 
-export default function AboutUser() {
+
+
+export default function AboutUser(props) {
+
+    // const dateJoined = d => 
+
+    
+
     return (
         <>
         <AboutUserContainer>
             {/*there will be individual elements in here containing the result of the fetch */}
-            <p>About username</p>
+            <p> About {props.userProfile.first_name}</p>
             <text>Location</text>
-            <InfoField>fetched location</InfoField>
+            <InfoField>{props.userProfile.location}</InfoField>
             <text>Luna member since</text>
-            <InfoField>fetched Date of -create profile-</InfoField>
+            <InfoField>{props.userProfile.joined_date}</InfoField>
             <text>Things I love</text>
-            <InfoField>fetched information</InfoField>
+            <InfoField>{props.userProfile.things_i_love}</InfoField>
             <text>Description</text>
-            <InfoField>fetched discription</InfoField>
+            <InfoField>description</InfoField>
         </AboutUserContainer>
             
         </>

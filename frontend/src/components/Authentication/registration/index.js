@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { RegisterCont, RegisterMsg, Inputfield, Button} from "./style"
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import registerAction from "../../../store/actions/registerAction"
+//import registerAction from "../../../store/actions/registerAction"
 
 export const Register = () => {
 
@@ -31,7 +31,7 @@ export const Register = () => {
         .then(data => {
             console.log(data);
         })
-        dispatch(registerAction(credentials))
+        // dispatch(registerAction(credentials))
         history.push("/sucess")
     }
 
