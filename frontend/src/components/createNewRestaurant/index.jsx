@@ -29,19 +29,19 @@ const CreateNewRestaurant = () => {
         event.preventDefault();
         const url = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/";
 
-        // var formData = new FormData();
-        // formData.append('name', 'name')
-        // formData.append('country', 'country')
-        // formData.append('street', 'street')
-        // formData.append('category', 'category')
-        // formData.append('city', 'city')
-        // formData.append('zip', 'zip')
-        // formData.append('website', 'website')
-        // formData.append('phone', 'phone')
-        // formData.append('opening_hours', 'opening_hours')
-        // formData.append('image', 'image')
-        // formData.append('price_level', 'price_level')
-        // formData.append('email', 'email')
+        let formData = new FormData();
+        formData.append('name', 'name')
+        formData.append('country', 'country')
+        formData.append('street', 'street')
+        formData.append('category', 'category')
+        formData.append('city', 'city')
+        formData.append('zip', 'zip')
+        formData.append('website', 'website')
+        formData.append('phone', 'phone')
+        formData.append('opening_hours', 'opening_hours')
+        formData.append('image', 'image')
+        formData.append('price_level', 'price_level')
+        formData.append('email', 'email')
 
         const restaurantDetails = {
             name: name,
@@ -60,11 +60,12 @@ const CreateNewRestaurant = () => {
 
         const config = {
             method: "POST",
-            body: JSON.stringify(restaurantDetails),
+            body: JSON.stringify(formData),
             headers: new Headers ({
                 // "Authorization": `Bearer ${token}`,
                 "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg4NDA4LCJqdGkiOiIyMDI0M2RlNDk2MjE0N2I5YjFjNjU2MTdhNDg5MDNiMiIsInVzZXJfaWQiOjF9.s2BCrO0ezAl3j77MH8BNTvXwdxgDfgtVLOmY4n8wX-4`,
                 "Content-Type": "application/json"
+                // "Content-Type": "FormData"
             })
         }
         fetch(url, config)
@@ -122,9 +123,7 @@ const CreateNewRestaurant = () => {
                                 {/*<FileUploader />*/}
                             </div>
                         </InputFieldsContainer>
-                        <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>
-                            Create Restaurant
-                        </CreateRestaurantButton>
+                        <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>Create Restaurant</CreateRestaurantButton>
                     </NewRestaurantContainer>
                 <Footer/>
     </>
