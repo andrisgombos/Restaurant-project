@@ -108,8 +108,8 @@ const Header = () => {
                 <HeaderLink onClick={ goToHome }>Home</HeaderLink>
                 <HeaderLink>Search</HeaderLink>
                 <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
-                <ButtonSignUp onClick={goTosignUp}>LOGIN</ButtonSignUp>
-                <ButtonSignIn onClick={goTologIn}>SIGNUP</ButtonSignIn>
+                <ButtonSignUp onClick={goTologIn}>LOGIN</ButtonSignUp>
+                <ButtonSignIn onClick={goTosignUp}>SIGNUP</ButtonSignIn>
 
             </RightContainer>
         </HeaderContainer>
