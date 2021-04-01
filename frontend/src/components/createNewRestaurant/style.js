@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {OrangeButton} from "../../globalStyle/globalStyle";
 
 
-export const NewRestaurantContainer = styled.div`
+export const NewRestaurantContainer = styled.form`
     background-color: #F2F2F2;
     display: flex;
     flex-direction: column;
@@ -15,12 +15,7 @@ export const NewRestaurantContainer = styled.div`
 `
 
 
-// // form container from motion frontend
-// export const NewPostFormContainer= styled.form`
-//     display:flex;
-//     flex-direction: column;
-// `
-export const InputFieldsContainer = styled.form`
+export const InputFieldsContainer = styled.div`
     display: flex;
     flex-direction: row;
 
@@ -58,7 +53,6 @@ export const InputField = styled.input`
     font-weight: normal;
     border: 1.5px solid #e5e5e5;
     border-radius: 5px;
-
 `
 
 
