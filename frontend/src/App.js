@@ -12,6 +12,7 @@ import CreateNewRestaurant from "./components/createNewRestaurant";
 import CreateNewReview from "./components/createNewReview";
 // import {withAuth} from './components/HOC'
 import Users from "./components/restaurants/users";
+import RestaurantOverview from "./components/restaurant_overview/index"
 
 
 
@@ -39,7 +40,7 @@ const App = () => {
         <Route exact path='/users' component={Users}/>
         <Route exact path='/create-new-restaurant' component={CreateNewRestaurant}/>
         <Route exact path='/create-new-review' component={CreateNewReview}/>
-
+        <Route exact path='/restaurant-view' component={RestaurantOverview}/>
 
 
 
