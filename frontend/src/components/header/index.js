@@ -93,7 +93,7 @@ const Header = () => {
     }
 
     const goToHome = () => {
-        history.push('/home')
+        history.push('/')
     }
 
     const goTologIn = () => {
@@ -101,6 +101,10 @@ const Header = () => {
     }
     const goTosignUp = () => {
         history.push('/registration')
+    }
+
+    const goToSearch = () => {
+        history.push('/restaurants')
     }
 
 
@@ -111,7 +115,7 @@ const Header = () => {
             <Logo src={lunaLogo}></Logo>
             <RightContainer>
                 <HeaderLink onClick={ goToHome }>Home</HeaderLink>
-                <HeaderLink>Search</HeaderLink>
+                <HeaderLink onClick={ goToSearch }>Search</HeaderLink>
                 <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
                 <ButtonSignUp onClick={goTosignUp}>SIGNUP</ButtonSignUp>
                 <ButtonSignIn onClick={goTologIn}>LOGIN</ButtonSignIn>

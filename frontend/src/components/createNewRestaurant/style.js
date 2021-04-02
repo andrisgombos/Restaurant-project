@@ -49,7 +49,7 @@ export const InputField = styled.input`
     width: 20em;
     margin-top: 1em;
     margin-bottom: 1.5em;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: normal;
     border: 1.5px solid #e5e5e5;
     border-radius: 5px;
@@ -61,7 +61,7 @@ export const SelectField = styled.select`
     width: 20em;
     margin-top: 1em;
     margin-bottom: 1.5em;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: normal;
     border: 1.5px solid #e5e5e5;
     border-radius: 5px;
