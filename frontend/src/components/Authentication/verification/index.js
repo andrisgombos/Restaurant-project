@@ -73,4 +73,4 @@ const Verification = () => {
 
 export default (Verification)
 
-// correct version
+// correct version v2
