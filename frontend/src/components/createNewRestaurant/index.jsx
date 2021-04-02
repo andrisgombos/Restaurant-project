@@ -96,7 +96,7 @@ const CreateNewRestaurant = () => {
                         <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Price level</GreyText>
-                         <SelectField name='price_level' type='text' onChange={(e)=>setPrice_level(e.target.value)}>
+                         <SelectField name='price_level' type='text' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}>
                              <option value="Select a price level...">Select a price level...</option>
                              <option value="1">1</option>
                              <option value="2">2</option>
@@ -106,7 +106,7 @@ const CreateNewRestaurant = () => {
                     <div>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Country *</GreyText>
-                        <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
+                        <SelectField name='country' placeholder='Select a Country...' type='text' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
                             <option value="Select a country...">Select a country...</option>
                             <option value="Austria">Austria</option>
                             <option value="Germany">Germany</option>
