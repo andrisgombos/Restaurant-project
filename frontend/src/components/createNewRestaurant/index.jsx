@@ -22,7 +22,7 @@ const CreateNewRestaurant = () => {
     const [price_level, setPrice_level] = useState("");
     const [email, setEmail] = useState("");
 
-    // const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
     const newRestaurantHandler = (event) =>  {
         event.preventDefault();
@@ -45,14 +45,10 @@ const CreateNewRestaurant = () => {
 
         const config = {
             method: "POST",
-            // body: JSON.stringify(restaurantDetails),
             body: formData,
 
             headers: new Headers ({
-                // "Authorization": `Bearer ${token}`,
-                "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg4NDA4LCJqdGkiOiIyMDI0M2RlNDk2MjE0N2I5YjFjNjU2MTdhNDg5MDNiMiIsInVzZXJfaWQiOjF9.s2BCrO0ezAl3j77MH8BNTvXwdxgDfgtVLOmY4n8wX-4`,
-                // "Content-Type": "application/json"
-                // "Content-Type": "FormData"
+                "Authorization": `Bearer ${token}`,
             })
         }
         fetch(url, config)
