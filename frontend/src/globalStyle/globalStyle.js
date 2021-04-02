@@ -95,5 +95,11 @@ export const OrangeButton = styled.button`
     border: none;
     background-color: #E47D31;
     font-size: 1.5rem;
+    :focus{
+    outline:transparent;
+    }
+    :hover{
+    font-weight:bolder;
+    }
+`;
     
-`

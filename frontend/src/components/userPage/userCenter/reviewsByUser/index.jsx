@@ -1,7 +1,14 @@
 import React from 'react'
 import { Main, StarRatingInBox } from './style'
+import { useSelector, useDispatch } from 'react-redux';
+
+
 
 export default function UserReviews() {
+
+    
+
+
     return (
         <>
         <Main>

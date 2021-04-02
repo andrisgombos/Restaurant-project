@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { OrangeButton } from '../../globalStyle/globalStyle';
 
 export const BackgroundColor = styled.main`
 background-color: #f8f8f8;
@@ -20,7 +21,7 @@ object-fit: cover;
 
 export const SearchBarContainer = styled.div`
 position: absolute;
-width: 40vw;
+width: 40 vw;
 `;
 
 export const InputField = styled.input`
@@ -31,13 +32,10 @@ background-color: white;
 border-radius: 5px;
 `;
 
-export const ButtonPlaceholder = styled.button`
-background-color: #e47d32;
-height: 20px;
-width: 100px;
-margin: 20px;
-border:none;
-color: white;
+export const ButtonPlaceholder = styled(OrangeButton)`
+width:200px;
+margin-left:20px;
+
 `;
 
 export const HeadlineContainer = styled.div`
