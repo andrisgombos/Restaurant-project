@@ -3,13 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 // import {Mainsection} from '../../globalStyle/globalStyle';
 import RestaurantGrid from '../restaurants/restaurantGrid/index'
-import {BackgroundColor,
-        SearchBarContainer,
-        InputField,
-        CategoriesContainer,
-        CategoriesUnderline,
-        Categories} from './style'
-import { useHistory } from 'react-router-dom';
+import {BackgroundColor} from './style'
 import Navbar from './navbar';
 
 
