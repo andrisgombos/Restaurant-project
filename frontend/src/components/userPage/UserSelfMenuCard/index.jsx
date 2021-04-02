@@ -8,7 +8,7 @@ import UserFace from '../../../assets/pictures/userFace2.JPG'
 import { useDispatch } from 'react-redux'
 
 
-export default function UserSelfMenuCard() {
+export default function UserSelfMenuCard(props) {
     const dispatch = useDispatch();
 
     const menuHandler = value => {
@@ -19,8 +19,8 @@ export default function UserSelfMenuCard() {
     return (
         <>
             <Card>
-                <img src={UserFace} alt="User's face"/>
-                <div><p>UserName's Profile</p></div>
+                <img src={props.userProfile.profile_picture} alt="User's face"/>
+                <div><p>{props.userProfile.first_name}'s profile</p></div>
                 <button
                     onClick={()=>menuHandler("0")}
                 ><img src={StarIcon} alt="reviews left by user"/><p>Reviews</p></button>

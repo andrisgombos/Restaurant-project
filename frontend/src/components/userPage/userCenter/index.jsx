@@ -8,7 +8,7 @@ import EditProfile from './editUser'
 
 
 
-export default function CenterContainer() {
+export default function CenterContainer(props) {
 
     
      const menuCount = useSelector(state => state.menuCount.pageId);

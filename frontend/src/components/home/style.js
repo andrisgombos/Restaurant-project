@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {OrangeButton} from "../../globalStyle/globalStyle";
+import { OrangeButton } from '../../globalStyle/globalStyle';
 
 
 export const BackgroundColor = styled.main`
@@ -22,7 +22,7 @@ object-fit: cover;
 
 export const SearchBarContainer = styled.div`
 position: absolute;
-width: 50vw;
+width: 40 vw;
 display: flex;
 align-items: center;
 `;

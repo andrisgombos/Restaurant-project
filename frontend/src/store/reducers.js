@@ -7,20 +7,20 @@ const initialState = {
     email: '',
     userMe:[],
     allUsers: [],
+    userId: 0,
 }
 
-const lunaReducer = (state = initialState, action) => {
-    switch (action.type){
-        case 'REGISTER':
-            //functionality
-            const newState = {...state};
-            newState.email = action.payload
-            return newState;
-        default:
-            return state;
-        
-    }
-}
+// const lunaReducer = (state = initialState, action) => {
+//     switch (action.type){
+//         case 'REGISTER':
+//             //functionality
+//             const newState = {...state};
+//             newState.email = action.payload
+//             return newState;
+//         default:
+//             return state;
+//     }
+// }
 
 const menuCount = (state= {pageId:"0"}, action) => {
     if(action.type === 'MENUCOUNTER'){
@@ -54,7 +54,7 @@ const deleteUserAction = (state= initialState, action) => {
 }
 
 export const rootReducer = combineReducers({
-    lunaReducer,
+    // lunaReducer,
     allUsersReducer,
     getLoggedInUser,
     deleteUserAction,
