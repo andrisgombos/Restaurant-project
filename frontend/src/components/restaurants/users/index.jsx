@@ -5,6 +5,7 @@ import Header from '../../header';
 import Footer from '../../footer';
 import {Mainsection} from '../../../globalStyle/globalStyle'
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar'
 
 const Users = () => {
     
@@ -42,6 +43,7 @@ console.log(users);
     return (
         <BackgroundColor>
             <Header/>
+            <Navbar/>
             <Mainsection>
                 <RestaurantGridContainer>
                 {users.map((user) =>

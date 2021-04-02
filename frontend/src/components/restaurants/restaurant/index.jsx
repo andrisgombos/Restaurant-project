@@ -28,6 +28,16 @@ const [restaurants, setRestaurants] = useState([]);
             .catch(err => setErrors(err));
             
     }, []);
+
+    const getHighestRated = () => {
+        let fourHighest = [];
+        restaurants.map((restaurant) =>
+            fourHighest.push(restaurant.average_rating)
+        )
+        return fourHighest;
+    }
+    console.log(getHighestRated());
+
     return (
         <Mainsection>
             <RestaurantGridContainer>

@@ -8,7 +8,7 @@ import {BackgroundColor,
         HeaderImage,
         SearchBarContainer,
         InputField,
-        ButtonPlaceholder,
+        SearchButton,
         HeadlineContainer,
         RestaurantHeadline} from './style';
 
@@ -20,7 +20,7 @@ const Home = () => {
             <HeaderImageContainer>
                 <SearchBarContainer>
                     <InputField placeholder="Search..."></InputField>
-                    <ButtonPlaceholder>Search</ButtonPlaceholder>
+                    <SearchButton>Search</SearchButton>
                 </SearchBarContainer>
                 <HeaderImage src={Food}></HeaderImage>
             </HeaderImageContainer>
