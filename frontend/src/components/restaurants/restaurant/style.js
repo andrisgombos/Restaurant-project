@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const RestaurantGridContainer = styled.div`
 display: grid;
-grid-template-columns: 270px 270px 270px 270px;
+grid-template-columns: auto auto auto auto;
 grid-template-rows: auto;
 column-gap: 20px;
 row-gap: 30px;
@@ -28,7 +28,7 @@ font-size: 14px;
 `;
 
 export const RestaurantImage = styled.img`
-width: 270px;
-height: 270px;
+width: 100%;
+height: 100%;
 object-fit: cover;
 `;

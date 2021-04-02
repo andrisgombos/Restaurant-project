@@ -15,16 +15,16 @@ import Navbar from '../navbar'
 
 const Reviews = () => {
     
-    const [users, setUsers] = useState([]);
+    const [reviews, setReviews] = useState([]);
     const [likes, setLikes] = useState([]);
     const [errors, setErrors] = useState(false);
 
     useEffect(() => {
-        fetchUser();
+        fetchReviews();
         toggleLike();  
     }, []);
 
-    const fetchUser = () => {
+    const fetchReviews = () => {
         const token = localStorage.getItem('token');
 
         const usersURL = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/";
@@ -37,7 +37,7 @@ const Reviews = () => {
         }
         fetch(usersURL, config)
             .then(res=> res.json())
-            .then(res => setUsers(res))
+            .then(res => setReviews(res))
             .catch(err => setErrors(err));
     }
 
@@ -59,33 +59,33 @@ const Reviews = () => {
     return (
         <BackgroundColor>
             <Header/>
+            <Navbar/>
             <Mainsection>
-                <Navbar/>
                 <RestaurantGridContainer>
-                {users.map((user) =>
-                    <ReviewCard key={user.id}>
+                {reviews.map((review) =>
+                    <ReviewCard key={review.id}>
                         <UserInfoContainer>
-                            <UserImage src={user.profile_picture}/>
+                            <UserImage src={review.profile_picture}/>
                             <UserInfoTextContainer>
-                                <UserInfo>{user.user_profile.first_name} {user.user_profile.last_name}</UserInfo>
-                                {user.user_profile.sent_reviews.length === 1
-                                ? <UserReviewsAmount>{user.user_profile.sent_reviews.length} Review</UserReviewsAmount>
-                                : <UserReviewsAmount>{user.user_profile.sent_reviews.length} Reviews</UserReviewsAmount>
+                                <UserInfo>{review.user_profile.first_name} {review.user_profile.last_name}</UserInfo>
+                                {review.user_profile.sent_reviews.length === 1
+                                ? <UserReviewsAmount>{review.user_profile.sent_reviews.length} Review</UserReviewsAmount>
+                                : <UserReviewsAmount>{review.user_profile.sent_reviews.length} Reviews</UserReviewsAmount>
                             }
                             </UserInfoTextContainer>
                         </UserInfoContainer>
                             <TopContainer>
-                                <RestaurantInfo>{user.restaurant.name}</RestaurantInfo>
-                                <UserReviewsAmount>{user.text_content}</UserReviewsAmount>
+                                <RestaurantInfo>{review.restaurant.name}</RestaurantInfo>
+                                <UserReviewsAmount>{review.text_content}</UserReviewsAmount>
                             </TopContainer>
                             <ButtonContainer>
-                                <LikeButton key={user.id} onClick={() => toggleLike(user.id)}>Like {user.liked_by.length}</LikeButton>
+                                <LikeButton key={review.id} onClick={() => toggleLike(review.id)}>Like {review.liked_by.length}</LikeButton>
                                 <CommentButton>Comment</CommentButton>
                             </ButtonContainer>
                             <LatestCommentsContainer>
                                 <LatestComments>Latest Comments</LatestComments>
                                 <CommentName>My Name</CommentName>
-                                <Comment>{user.comment}</Comment>
+                                <Comment>{review.comment}</Comment>
                                 <CommentName>My Name</CommentName>
                                 <Comment>Lorem ipsum dolor sit amet this is a placeholder halle hallo</Comment>
                             </LatestCommentsContainer>
