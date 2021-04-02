@@ -79,15 +79,8 @@ const Reviews = () => {
                                 <UserReviewsAmount>{user.text_content}</UserReviewsAmount>
                             </TopContainer>
                             <ButtonContainer>
-                            {likes.map ((like) => 
-                                {(like.liked_by)
-                                    
-                                ? <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like</LikeButton>
-                                : <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like 1</LikeButton>
-                            }
-                            )};
+                                <LikeButton key={user.id} onClick={() => toggleLike(user.id)}>Like {user.liked_by.length}</LikeButton>
                                 <CommentButton>Comment</CommentButton>
-
                             </ButtonContainer>
                             <LatestCommentsContainer>
                                 <LatestComments>Latest Comments</LatestComments>
