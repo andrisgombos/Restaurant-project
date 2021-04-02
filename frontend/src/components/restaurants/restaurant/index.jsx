@@ -6,39 +6,37 @@ import {RestaurantGridContainer,
         RestaurantName,
         RestaurantAddress,
         RestaurantImage} from './style';
+import {allRestaurants} from '../../../store/actions/allRestaurantsAction';
+import {connect} from 'react-redux';
 
-const Restaurant = () => {
+const Restaurant = (props) => {
 
 const [restaurants, setRestaurants] = useState([]);
-    const [errors, setErrors] = useState(false);
+const [errors, setErrors] = useState(false);
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
         
         const restaurantsURL = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/";
         const config = {
             method: "GET",
             headers: new Headers({
-                "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg3MDA1LCJqdGkiOiI0ZDFlZmM4MGFlMjc0MzZmYjkyMjcxYjAwMTIzMGE0NyIsInVzZXJfaWQiOjF9.Wmz8rmox2nvDrFC4zBzAU_X_iEC-t7LbuCzak0D3nTE`,
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             })
         }
         fetch(restaurantsURL,config)
             .then(res=> res.json())
-            .then(res => setRestaurants(res))
+            .then(res => {
+                setRestaurants(res);
+                props.dispatch(allRestaurants(res));
+            })
             .catch(err => setErrors(err));
             
     }, []);
 
-    const getHighestRated = () => {
-        let fourHighest = [];
-        restaurants.map((restaurant) =>
-            fourHighest.push(restaurant.average_rating)
-        )
-        return fourHighest;
-    }
-    console.log(getHighestRated());
+      return (
 
-    return (
         <Mainsection>
             <RestaurantGridContainer>
                 {restaurants.map((restaurant) => 
@@ -54,4 +52,10 @@ const [restaurants, setRestaurants] = useState([]);
     )
 }
 
-export default Restaurant;
+const mapStateToProps = (state) => {
+    return ({
+        //allRestaurants: state.allRestaurants
+        state
+    })
+}
+export default connect(mapStateToProps)(Restaurant)

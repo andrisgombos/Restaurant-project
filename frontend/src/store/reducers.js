@@ -8,6 +8,7 @@ const initialState = {
     userMe:[],
     allUsers: [],
     userId: 0,
+    allRestaurants: {},
 }
 
 // const lunaReducer = (state = initialState, action) => {
@@ -29,7 +30,17 @@ const menuCount = (state= {pageId:"0"}, action) => {
     return state
 }
 
-
+const allRestaurantsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'ALL_RESTAURANTS':
+            const newState = {...state};
+            newState.allRestaurants = action.payload;
+            return newState;
+            break;
+        default: 
+            return state
+    }
+}
 
 
 const allUsersReducer = (state= initialState, action) => {
@@ -59,6 +70,7 @@ export const rootReducer = combineReducers({
     getLoggedInUser,
     deleteUserAction,
     menuCount,
+    allRestaurantsReducer,
 });
 
 
