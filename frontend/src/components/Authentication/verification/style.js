@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { OrangeButton } from '../../../globalStyle/globalStyle'
-import { Button } from "../registration/style"
+import { Inputfield } from "../registration/style"
 
 export const VerificationCont = styled.div`
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:auto;
+    height: auto;
     width: 100vw;
     font-weight: bold;
 `
@@ -30,4 +30,9 @@ export const InputHolder = styled.div`
 export const RegButton = styled(OrangeButton)`
     margin:25px;
     width:300px;
+    margin-bottom: 100px;
+`
+
+export const VerInput = styled(Inputfield)`
+    font-size: 1rem;
 `
