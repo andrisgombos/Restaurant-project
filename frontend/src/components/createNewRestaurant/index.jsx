@@ -22,7 +22,7 @@ const CreateNewRestaurant = () => {
     const [price_level, setPrice_level] = useState("");
     const [email, setEmail] = useState("");
 
-    // const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
     const newRestaurantHandler = (event) =>  {
         event.preventDefault();
@@ -45,14 +45,10 @@ const CreateNewRestaurant = () => {
 
         const config = {
             method: "POST",
-            // body: JSON.stringify(restaurantDetails),
             body: formData,
 
             headers: new Headers ({
-                // "Authorization": `Bearer ${token}`,
-                "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg4NDA4LCJqdGkiOiIyMDI0M2RlNDk2MjE0N2I5YjFjNjU2MTdhNDg5MDNiMiIsInVzZXJfaWQiOjF9.s2BCrO0ezAl3j77MH8BNTvXwdxgDfgtVLOmY4n8wX-4`,
-                // "Content-Type": "application/json"
-                // "Content-Type": "FormData"
+                "Authorization": `Bearer ${token}`,
             })
         }
         fetch(url, config)
@@ -100,7 +96,7 @@ const CreateNewRestaurant = () => {
                         <InputField name='phone' type='text' value= {undefined} onChange={(e)=>setPhone(e.target.value)}/>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Price level</GreyText>
-                         <SelectField name='price_level' type='text' onChange={(e)=>setPrice_level(e.target.value)}>
+                         <SelectField name='price_level' type='text' value= {undefined} onChange={(e)=>setPrice_level(e.target.value)}>
                              <option value="Select a price level...">Select a price level...</option>
                              <option value="1">1</option>
                              <option value="2">2</option>
@@ -110,7 +106,7 @@ const CreateNewRestaurant = () => {
                     <div>
                         <InvisibleText>.</InvisibleText>
                         <GreyText>Country *</GreyText>
-                        <SelectField name='country' placeholder='Select a Country...' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
+                        <SelectField name='country' placeholder='Select a Country...' type='text' value= {undefined} onChange={(e)=>setCountry(e.target.value)}>
                             <option value="Select a country...">Select a country...</option>
                             <option value="Austria">Austria</option>
                             <option value="Germany">Germany</option>

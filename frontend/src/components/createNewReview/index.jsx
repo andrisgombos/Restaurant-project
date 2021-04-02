@@ -16,18 +16,20 @@ import StarRating from "../starrating";
 
 
 
-
 const CreateNewReview = () => {
 
     // GET restaurant info: name, image, rating, etc.
     const [restaurant, setRestaurant] = useState([]);
     const [errors, setErrors] = useState(false);
 
+    // const token = localStorage.getItem('token');
+
     useEffect(() => {
         const restaurantsURL = "https://luna-taurus.propulsion-learn.ch/backend/api/restaurants/7/";
         const config = {
             method: "GET",
             headers: new Headers({
+                // "Authorization": `Bearer ${token}`,
                 "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg3MDA1LCJqdGkiOiI0ZDFlZmM4MGFlMjc0MzZmYjkyMjcxYjAwMTIzMGE0NyIsInVzZXJfaWQiOjF9.Wmz8rmox2nvDrFC4zBzAU_X_iEC-t7LbuCzak0D3nTE`,
                 "Content-Type": "application/json"
             })
@@ -65,7 +67,6 @@ const CreateNewReview = () => {
             .then(res => res.json())
             .then(data => console.log(data))
         }
-        console.log(restaurant)
 
 
     return <>
