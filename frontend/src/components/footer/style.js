@@ -6,6 +6,8 @@ width: 100%;
 position: sticky;
 bottom: 0;
 background-color: white;
+margin-top:1%;
+
 `;
 
 export const UpperFooter = styled.footer`

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    height:auto;
+    display:flex;
+    flex-direction:column;
+    height:100%;
     width:55%;
-    background-color:white;
+    background-color:#f8f8f8;
     overflow-y:scroll;
     overflow-x:hidden;
     ::-webkit-scrollbar{
