@@ -1,6 +1,6 @@
 import Footer from "../../footer";
 import Header from "../../header";
-import { RegisterMsg } from "../registration/style"
+import { RegisterMsg} from "../registration/style"
 import { VerificationCont, InputHolder, RegButton, VerInput } from "./style"
 import { Link } from 'react-router-dom';
 import React,{useState} from 'react';
@@ -72,3 +72,5 @@ const Verification = () => {
 }
 
 export default (Verification)
+
+// correct version
