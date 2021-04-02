@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import {Mainsection} from "../../globalStyle/globalStyle"
 import {UpperContainer, RestInUpperCont} from "./style"
 import StarRating from "../starrating/index"
+import { Main } from "../../components/userPage/userCenter/reviewsByUser/style"
 
 const RestaurantOverview = () => {
 
@@ -19,6 +20,12 @@ const RestaurantOverview = () => {
                 </RestInUpperCont>
             </UpperContainer>
             <Mainsection>
+                <Main>
+                    <div>
+                        <h1>Name</h1>
+                        <span>Total reviews</span>
+                    </div>
+                </Main>
             </Mainsection>
         <Footer/>
         </>
