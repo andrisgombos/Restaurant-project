@@ -9,6 +9,8 @@ import {BackgroundColor,
         CategoriesContainer,
         CategoriesUnderline,
         Categories} from './style'
+import { useHistory } from 'react-router-dom';
+import Navbar from './navbar';
 
 
 
@@ -16,19 +18,10 @@ const Restaurants = () => {
 
     return (
         <BackgroundColor>
-            <Header></Header>
-            <SearchBarContainer>
-                <InputField placeholder="Search"></InputField>
-            </SearchBarContainer>
-            <CategoriesContainer>
-                <CategoriesUnderline>
-                    <Categories>Restaurants</Categories>
-                    <Categories>Reviews</Categories>
-                    <Categories>Users</Categories>
-                </CategoriesUnderline>
-            </CategoriesContainer>
-            <RestaurantGrid></RestaurantGrid>
-            <Footer></Footer>
+            <Header/>
+            <Navbar/>
+            <RestaurantGrid/>
+            <Footer/>
         </BackgroundColor> 
         )
 }
