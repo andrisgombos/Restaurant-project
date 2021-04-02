@@ -51,7 +51,7 @@ console.log(users);
                         <UserInfoContainer>
                             <UserImage src={user.profile_picture}/>
                             <UserInfoTextContainer>
-                                <UserInfo><Link to="/user"  >{user.first_name} {user.last_name}</Link></UserInfo>
+                            <Link to="/user"><UserInfo>{user.first_name} {user.last_name}</UserInfo></Link>
                                 {user.sent_reviews.length === 1
                                 ? <UserReviewsAmount>{user.sent_reviews.length} Review</UserReviewsAmount>
                                 : <UserReviewsAmount>{user.sent_reviews.length} Reviews</UserReviewsAmount>

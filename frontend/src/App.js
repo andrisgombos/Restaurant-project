@@ -31,7 +31,7 @@ const App = () => {
         <Route exact path='/sucess' component={Email}/>
         <Route exact path='/verification' component={Verification}/>
         <Route exact path='/sign-in' component={SignIn}/>
-        <Route exact path='/home' component={Home}/>
+        <Route exact path='/' component={Home}/>
         <Route exact path='/user' component={ProfilePage}/>
         {/*next line is just to test pages */}
         <Route exact path='/user-self' component={MyProfilePage}/>

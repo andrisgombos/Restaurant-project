@@ -25,11 +25,13 @@ const Reviews = () => {
     }, []);
 
     const fetchUser = () => {
+        const token = localStorage.getItem('token');
+
         const usersURL = "https://luna-taurus.propulsion-learn.ch/backend/api/reviews/";
         const config = {
             method: "GET",
             headers: new Headers({
-                "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3Mzg3MDA1LCJqdGkiOiI0ZDFlZmM4MGFlMjc0MzZmYjkyMjcxYjAwMTIzMGE0NyIsInVzZXJfaWQiOjF9.Wmz8rmox2nvDrFC4zBzAU_X_iEC-t7LbuCzak0D3nTE`,
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             })
         }
@@ -52,20 +54,6 @@ const Reviews = () => {
             .then(res=> res.json())
             .then(res => console.log("in setlikes", res))
             .catch(err => setErrors(err));
-    }
-
-    const history = useHistory();
-
-    const goToRestaurants = () => {
-        history.push('/restaurants');
-    }
-
-    const goToUsers = () => {
-        history.push('/users');
-    }
-
-    const goToReviews = () => {
-        history.push('/reviews');
     }
 
     return (
@@ -91,15 +79,8 @@ const Reviews = () => {
                                 <UserReviewsAmount>{user.text_content}</UserReviewsAmount>
                             </TopContainer>
                             <ButtonContainer>
-                            {likes.map ((like) => 
-                                {(like.liked_by)
-                                    
-                                ? <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like</LikeButton>
-                                : <LikeButton key={like.id} onClick={() => toggleLike(like.id)}>Like 1</LikeButton>
-                            }
-                            )};
+                                <LikeButton key={user.id} onClick={() => toggleLike(user.id)}>Like {user.liked_by.length}</LikeButton>
                                 <CommentButton>Comment</CommentButton>
-
                             </ButtonContainer>
                             <LatestCommentsContainer>
                                 <LatestComments>Latest Comments</LatestComments>
