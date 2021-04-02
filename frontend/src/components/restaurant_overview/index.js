@@ -1,10 +1,10 @@
 import Footer from "../footer/index"
 import Header from "../header/index"
 import React, { useState, useEffect } from 'react';
-import {Mainsection} from "../../globalStyle/globalStyle"
-import {UpperContainer, RestInUpperCont} from "./style"
+import {Mainsection, Background, OrangeButton} from "../../globalStyle/globalStyle"
+import {UpperContainer, RestInUpperCont,MainWrapper, Left, LeftInnerWrapper, RestStarRating, Right, RightWrapper, RestButton} from "./style"
+import userimg from "../../assets/pictures/userFace.JPG"
 import StarRating from "../starrating/index"
-import { Main } from "../../components/userPage/userCenter/reviewsByUser/style"
 
 const RestaurantOverview = () => {
 
@@ -19,14 +19,31 @@ const RestaurantOverview = () => {
                     </div>
                 </RestInUpperCont>
             </UpperContainer>
+            <Background>
             <Mainsection>
-                <Main>
-                    <div>
-                        <h1>Name</h1>
-                        <span>Total reviews</span>
-                    </div>
-                </Main>
+                <MainWrapper>
+                    <Left>
+                        <LeftInnerWrapper>
+                            <img src={userimg}/>
+                            <div>
+                                <h1>Name</h1>
+                                <span>Total reviews</span>
+                            </div>
+                            
+                        </LeftInnerWrapper>
+                    <div>Review content</div>
+                    </Left>
+                    <Right>
+                        <span>Opening Hours</span>
+                        <span>Price level: $$$</span>
+                        <RightWrapper>
+                            <RestButton>Write a review</RestButton>
+                            <RestButton>Edit data</RestButton>
+                        </RightWrapper >
+                    </Right>
+                </MainWrapper>
             </Mainsection>
+            </Background>
         <Footer/>
         </>
     
