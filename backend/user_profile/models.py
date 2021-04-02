@@ -24,9 +24,9 @@ class UserProfile(models.Model):
     # Set phone
     phone = models.CharField(max_length=10, blank=True, null=True)
     # Set things I love
-    things_i_love = models.CharField(max_length=500)
+    things_i_love = models.CharField(max_length=500, blank=True)
     # Set description
-    description = models.TextField(max_length=1000)
+    description = models.TextField(max_length=1000, blank=True)
     # Set joined date
     joined_date = models.DateTimeField(auto_now_add=True)
     # Set profile picture

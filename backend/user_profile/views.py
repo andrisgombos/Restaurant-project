@@ -15,6 +15,7 @@ class ListCreateUserProfileView(ListCreateAPIView):
     With the **GET Method** you can retrieve all user profiles
     With the **POST Method** you can create a new user profile
     '''
+    permission_classes = []
     queryset = UserProfile.objects.all()
     serializer_class = MainUserProfileSerializer
     search_fields = ['first_name', 'last_name', ]
