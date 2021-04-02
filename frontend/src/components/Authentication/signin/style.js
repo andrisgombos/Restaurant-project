@@ -6,6 +6,6 @@ export const SignInCont = styled.div`
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     font-weight: bold;
 `

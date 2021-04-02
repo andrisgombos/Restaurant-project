@@ -22,7 +22,7 @@ export default function ProfilePage() {
                 {/* if the Token is stored then render  the self-menu-card, if no token is present re-direct to signUp page*/}
                 <UserMenuCard />
                 <CenterContainer />
-                <AboutUser />
+                {/* <AboutUser /> */}
             </Mainsection>
         </Background>
         <Footer />

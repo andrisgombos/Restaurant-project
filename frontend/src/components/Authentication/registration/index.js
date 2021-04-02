@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import { RegisterCont, RegisterMsg, Inputfield, Button} from "./style"
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import { Background } from "../../../globalStyle/globalStyle";
 //import registerAction from "../../../store/actions/registerAction"
 
 export const Register = () => {
@@ -37,11 +38,13 @@ export const Register = () => {
 
     return  <>
                 <Header/>
+                <Background>
                 <RegisterCont>
                     <RegisterMsg>Registration</RegisterMsg>
                     <Inputfield name='email' type='text' placeholder='E-mail address' value={regEmail} onChange={(e)=>setEmail(e.target.value)}></Inputfield>
                     <Button type='submit' onClick={regHandler}>Register</Button>
                 </RegisterCont>
+                </Background>
                 <Footer/>
             </>
 }

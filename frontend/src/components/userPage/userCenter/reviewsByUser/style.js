@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import StarRating from '../../../starrating';
 
 export const Main = styled.div`
+background-color:white;
 height:auto;
 display:flex;
 flex-direction:column;

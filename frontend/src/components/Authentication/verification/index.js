@@ -5,6 +5,7 @@ import { VerificationCont, InputHolder, RegButton } from "./style"
 import { Link } from 'react-router-dom';
 import React,{useState} from 'react';
 import { useHistory } from "react-router-dom";
+import { Background } from "../../../globalStyle/globalStyle";
 
 const Verification = () => {
 
@@ -47,23 +48,25 @@ const Verification = () => {
 
     return  <>
                 <Header/>
+                
                     <VerificationCont>
                         <RegisterMsg>Verification</RegisterMsg>
-                        <InputHolder>
+                        <InputHolder><span><Inputfield name='code' type='text' placeholder='Validation code' value={code} onChange ={(e)=> setCode(e.target.value)}></Inputfield></span></InputHolder>
+                            <InputHolder>
                             <div>
                                 <Inputfield name='email' type='text' placeholder='E-mail address' value={email} onChange ={(e)=> setEmail(e.target.value)}></Inputfield>
-                                <Inputfield name='user' type='text' placeholder='Username' value={username} onChange ={(e)=> setUsername(e.target.value)}></Inputfield>
                                 <Inputfield name='password' type='password' placeholder='Password' value={password} onChange ={(e)=> setPassword(e.target.value)}></Inputfield>
+                                <Inputfield name='first_name' type='text' placeholder='First name' value={first_name} onChange ={(e)=> setFirst_name(e.target.value)}></Inputfield>
                             </div>
                             <div>
-                                <Inputfield name='code' type='text' placeholder='Validation code' value={code} onChange ={(e)=> setCode(e.target.value)}></Inputfield>
-                                <Inputfield name='first_name' type='text' placeholder='First name' value={first_name} onChange ={(e)=> setFirst_name(e.target.value)}></Inputfield>
-                                <Inputfield name='last_name' type='text' placeholder='Last name' value={last_name} onChange ={(e)=> setLast_name(e.target.value)}></Inputfield>
                                 <Inputfield name='password_repeat' type='password' placeholder='Password repeat' value={password_repeat} onChange ={(e)=> setPassword_repeat(e.target.value)}></Inputfield>
+                                <Inputfield name='last_name' type='text' placeholder='Last name' value={last_name} onChange ={(e)=> setLast_name(e.target.value)}></Inputfield>
+                                <Inputfield name='user' type='text' placeholder='Username' value={username} onChange ={(e)=> setUsername(e.target.value)}></Inputfield>
                             </div>
                         </InputHolder>
                         <RegButton type='submit' onClick={veriHandler}>Finish registration</RegButton>
                     </VerificationCont>
+                    
                 <Footer/>
             </>
 }

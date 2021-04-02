@@ -26,13 +26,14 @@ const RightContainer = styled.div`
 display: flex;
 align-items: center;
 margin-right: 20px;
+
 `;
 
 const HeaderLink = styled.p`
 font-family: Arial, Helvetica, sans-serif;
 color: #4a4a4a;
-margin: 0 20px;
-padding: 23px 1;
+margin:0 15px 0 15px ;
+padding: 20px 0px 20px 0px;
 cursor: pointer;
 
 
@@ -40,23 +41,8 @@ cursor: pointer;
     border-bottom: 2px solid #e47d32;
     font-weight: bold;
     color: black;
-}
-`;
-
-export const ButtonSignIn  = styled(OrangeButton)`
-background-color: #e47d32;
-width:100px;
-height: 40px;
-border-bottom-left-radius:0;
-border-top-left-radius:0;
-margin-left:1px;
-font-size:16px;
-border:none;
-:focus{
-    outline:transparent;
-}
-:hover{
-    font-weight:bolder;
+    padding:0;
+    
 }
 `;
 
@@ -67,6 +53,25 @@ height: 40px;
 border-bottom-right-radius:0;
 border-top-right-radius:0;
 margin-right:1px;
+margin-left:10px;
+font-size:16px;
+border:none;
+:focus{
+    outline:transparent;
+}
+:hover{
+    font-weight:bolder;
+}
+`;
+
+export const ButtonSignIn  = styled(OrangeButton)`
+background-color: #e47d32;
+width:100px;
+height: 40px;
+border-bottom-left-radius:0;
+border-top-left-radius:0;
+margin-left:1px;
+
 border: none;
 font-size:16px;
 :focus{
@@ -108,8 +113,8 @@ const Header = () => {
                 <HeaderLink onClick={ goToHome }>Home</HeaderLink>
                 <HeaderLink>Search</HeaderLink>
                 <HeaderLink onClick={goToProfile} >Profile</HeaderLink>
-                <ButtonSignUp onClick={goTologIn}>LOGIN</ButtonSignUp>
-                <ButtonSignIn onClick={goTosignUp}>SIGNUP</ButtonSignIn>
+                <ButtonSignUp onClick={goTosignUp}>SIGNUP</ButtonSignUp>
+                <ButtonSignIn onClick={goTologIn}>LOGIN</ButtonSignIn>
 
             </RightContainer>
         </HeaderContainer>

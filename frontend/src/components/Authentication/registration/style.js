@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { OrangeButton } from '../../../globalStyle/globalStyle';
 
 export const RegisterCont = styled.div`
 background-color: #F2F2F2;
@@ -15,7 +16,7 @@ color: #4C4C4C;
 font-size: 2.5rem;
 margin-bottom: 80px;
 text-transform: uppercase;
-border-bottom: 6px solid orange;
+border-bottom: 6px solid #E47D31;
 border-bottom-style: solid;
 padding-bottom: 0.3em;
 margin-top: 2em;
@@ -30,16 +31,9 @@ font-size: 1.5rem;
 font-weight: bold;
 border: 1.5px solid #e5e5e5;
 `
-export const Button = styled.button`
-width: 10em;
-align-self: center;
-border-radius: 100px;
-color: #F8F8FF;
-border: none;
-background-color: #E47D31;
-font-size: 1.5rem;
-padding: 1em 1.5em;
-margin-top: 3em;
+export const Button = styled(OrangeButton)`
+
+margin:5%;
 
 :focus{
     outline:transparent;
