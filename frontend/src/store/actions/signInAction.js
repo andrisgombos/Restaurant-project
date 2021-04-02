@@ -26,7 +26,7 @@ export const signInAction = (credentials, history) => {
         dispatch(action);
         if(data.access)localStorage.setItem("token", data.access);
          localStorage.setItem("user", data.user);
-        history.push('/home')
+        history.push('/')
         }else {
             alert('Incorrect login information')
         }

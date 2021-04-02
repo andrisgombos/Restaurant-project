@@ -5,6 +5,7 @@ import {
     InputField, CreateRestaurantButton, CreateRestaurantHeader, NewRestaurantContainer, InputFieldsContainer,
     InvisibleText, GreyText, SelectField,
 } from './style'
+import { Link } from 'react-router-dom';
 
 
 const CreateNewRestaurant = () => {
@@ -123,7 +124,7 @@ const CreateNewRestaurant = () => {
                         <InputField name='image' type='file' value= {undefined} onChange={(e)=>setImage(e.target.files[0])}/>
                     </div>
                 </InputFieldsContainer>
-                <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}>Create Restaurant</CreateRestaurantButton>
+                <CreateRestaurantButton type='submit' onClick={newRestaurantHandler}><Link to="/restaurants">Create Restaurant</Link></CreateRestaurantButton>
             </NewRestaurantContainer>
         <Footer/>
     </>
